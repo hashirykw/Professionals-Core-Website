@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Professionals Core – Your Second Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0B1F3A;
+    --gold: #C9A84C;
+    --gold-light: #F0D98B;
+    --gold-dark: #8A6A20;
+    --cream: #FDFBF6;
+    --white: #FFFFFF;
+    --gray-100: #F5F4F0;
+    --gray-200: #E8E6DF;
+    --gray-400: #9E9B90;
+    --gray-600: #5C5A53;
+    --gray-800: #2E2D28;
+    --text: #1A1917;
+    --text-muted: #6B6960;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(11, 31, 58, 0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+  }
+
+  .nav-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-logo-main {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  .nav-logo-sub {
+    font-size: 10px;
+    color: rgba(201, 168, 76, 0.6);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.75);
+    font-size: 13.5px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    display: block;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 80%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+  }
+
+  .hero h1 span { color: var(--gold); }
+
+  .hero-tagline {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+    font-family: var(--font-display);
+    margin-bottom: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.8);
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .hero-stat { text-align: center; }
+
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* SECTION WRAPPER */
+  section { padding: 5rem 2rem; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-title span { color: var(--gold-dark); }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.8;
+  }
+
+  /* ABOUT */
+  #about { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .about-visual {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-visual::before {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 200px; height: 200px;
+    background: rgba(201,168,76,0.08);
+    border-radius: 50%;
+  }
+
+  .about-quote {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--white);
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-quote span { color: var(--gold); }
+
+  .about-visual-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .astat { border-left: 2px solid var(--gold); padding-left: 1rem; }
+
+  .astat-n {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--gold);
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+  }
+
+  .astat-l {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+    display: block;
+  }
+
+  .about-text h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-text p {
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+    font-size: 15px;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .pillar {
+    background: var(--gray-100);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  .pillar-title {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+
+  .pillar-desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* SUBJECTS */
+  #subjects { background: var(--cream); }
+
+  .subjects-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+    border-bottom: 2px solid var(--gray-200);
+    padding-bottom: 0;
+  }
+
+  .tab-btn {
+    padding: 10px 24px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    letter-spacing: 0.03em;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .tab-btn.active { color: var(--navy); border-bottom-color: var(--gold); }
+  .tab-btn:hover { color: var(--navy); }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .subject-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .subject-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 16px rgba(11,31,58,0.06);
+  }
+
+  .subject-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .subject-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  /* FACULTY */
+  #faculty { background: var(--navy); }
+
+  #faculty .section-title { color: var(--white); }
+  #faculty .section-eyebrow { color: var(--gold); }
+  #faculty .section-sub { color: rgba(255,255,255,0.5); }
+
+  #faculty .subjects-tabs { border-bottom-color: rgba(255,255,255,0.12); }
+  #faculty .tab-btn { color: rgba(255,255,255,0.45); }
+  #faculty .tab-btn.active { color: var(--white); border-bottom-color: var(--gold); }
+  #faculty .tab-btn:hover { color: var(--white); }
+
+  .faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .faculty-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faculty-card:hover {
+    background: rgba(201,168,76,0.08);
+    border-color: rgba(201,168,76,0.3);
+  }
+
+  .faculty-card.featured {
+    border-color: rgba(201,168,76,0.5);
+    background: rgba(201,168,76,0.07);
+  }
+
+  .faculty-badge {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .faculty-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.15);
+    border: 1.5px solid rgba(201,168,76,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+
+  .faculty-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--white);
+    margin-bottom: 3px;
+  }
+
+  .faculty-subject {
+    font-size: 13px;
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .faculty-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  /* STAR FACULTY */
+  .star-faculty {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2.5rem;
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    align-items: center;
+  }
+
+  .star-avatar-lg {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.15);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 auto;
+  }
+
+  .star-faculty-meta h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .star-faculty-meta .role {
+    color: var(--gold);
+    font-size: 14px;
+    margin-bottom: 1rem;
+  }
+
+  .star-achievements {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .star-ach {
+    text-align: center;
+  }
+
+  .star-ach-n {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+  }
+
+  .star-ach-l {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    display: block;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* CAMPUSES */
+  #campuses { background: var(--white); }
+
+  .campuses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .campus-card {
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+
+  .campus-card:hover {
+    box-shadow: 0 8px 32px rgba(11,31,58,0.08);
+    transform: translateY(-2px);
+  }
+
+  .campus-header {
+    background: var(--navy);
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .campus-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(201,168,76,0.15);
+    position: absolute;
+    right: 1rem; top: 0.5rem;
+    line-height: 1;
+  }
+
+  .campus-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+
+  .campus-location {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 3px;
+  }
+
+  .campus-body { padding: 1.25rem 1.5rem; }
+
+  .campus-contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+  }
+
+  .campus-contact:hover { color: var(--navy); }
+
+  .campus-contact svg {
+    width: 15px; height: 15px;
+    flex-shrink: 0;
+    color: var(--gold-dark);
+  }
+
+  .campus-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #FFF8E7;
+    color: #8A6A20;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-top: 0.5rem;
+  }
+
+  /* ADMISSIONS */
+  #admissions {
+    background: linear-gradient(135deg, var(--navy) 0%, #0D2545 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #admissions::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: rgba(201,168,76,0.05);
+    border-radius: 50%;
+  }
+
+  #admissions .section-title { color: var(--white); }
+  #admissions .section-eyebrow { color: var(--gold); }
+
+  .admissions-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .admissions-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .admissions-info p {
+    color: rgba(255,255,255,0.55);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .sessions-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .sessions-open::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .contact-form-wrap {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 2rem;
+  }
+
+  .form-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group { margin-bottom: 1rem; }
+
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 5px;
+    padding: 10px 14px;
+    color: var(--white);
+    font-size: 14px;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-group input:focus,
+  .form-group select:focus { border-color: var(--gold); }
+
+  .form-group select { color: rgba(255,255,255,0.7); }
+  .form-group select option { background: var(--navy); color: var(--white); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    cursor: pointer;
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+  }
+
+  .form-submit:hover { background: var(--gold-light); }
+
+  /* SOCIAL */
+  #connect { background: var(--cream); }
+
+  .social-bar {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+
+  .social-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .social-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 16px rgba(11,31,58,0.06);
+  }
+
+  .social-icon {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .social-icon.insta { background: #F5ECF8; color: #8B2FC9; }
+  .social-icon.fb { background: #EAF0FB; color: #1877F2; }
+  .social-icon.google { background: #FDECEA; color: #EA4335; }
+  .social-icon.web { background: var(--gray-100); color: var(--navy); }
+
+  .social-info {}
+  .social-name { font-weight: 600; font-size: 14px; color: var(--navy); }
+  .social-handle { font-size: 12.5px; color: var(--text-muted); }
+
+  /* FOOTER */
+  footer {
+    background: var(--gray-800);
+    padding: 3rem 2rem 1.5rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-brand-desc {
+    font-size: 13.5px;
+    line-height: 1.7;
+    max-width: 300px;
+  }
+
+  .footer-col-title {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .footer-links { list-style: none; }
+
+  .footer-links li { margin-bottom: 0.6rem; }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 13.5px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .footer-bottom span { color: var(--gold); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: var(--navy);
+      padding: 1.5rem;
+      gap: 1.25rem;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .admissions-content { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-stats { gap: 2rem; }
+    .star-faculty { grid-template-columns: 1fr; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="nav-logo-main">The Professionals Core</span>
+    <span class="nav-logo-sub">Cambridge Education Network</span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#subjects">Subjects</a></li>
+    <li><a href="#faculty">Faculty</a></li>
+    <li><a href="#campuses">Campuses</a></li>
+    <li><a href="#admissions" class="nav-cta">Admissions Open</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Admissions Open — Session 2026–27</div>
+  <h1>Excellence in<br><span>Cambridge Education</span></h1>
+  <p class="hero-tagline">"Your Second Home"</p>
+  <p class="hero-desc">
+    Karachi's dedicated O Level, IGCSE & A Level coaching network — where students don't just prepare for exams, they build their futures.
+  </p>
+  <div class="hero-btns">
+    <a href="#admissions" class="btn-primary">Apply Now</a>
+    <a href="#subjects" class="btn-outline">Explore Subjects</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">4</span>
+      <span class="hero-stat-label">Campuses</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">4K+</span>
+      <span class="hero-stat-label">A* Grades Produced</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">22</span>
+      <span class="hero-stat-label">Subjects Offered</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">10</span>
+      <span class="hero-stat-label">Years of Excellence</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <p class="about-quote">"More than a coaching centre. A place where<span> ambition meets guidance.</span>"</p>
+        <div class="about-visual-stats">
+          <div class="astat">
+            <span class="astat-n">4 Campuses</span>
+            <span class="astat-l">Across Karachi</span>
+          </div>
+          <div class="astat">
+            <span class="astat-n">4.8★</span>
+            <span class="astat-l">Google Rating</span>
+          </div>
+          <div class="astat">
+            <span class="astat-n">Online</span>
+            <span class="astat-l">& On-Site</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-title">Built for<br><span>Cambridge Students</span></h2>
+        <p>The Professionals Core is a dedicated Cambridge education network serving O Level, IGCSE, and A Level students across Karachi. We combine subject expertise with a genuine care for student wellbeing — earning our name as students' second home.</p>
+        <p>With campuses in North Nazimabad, Gulshan, Johar, and Bahadurabad, we bring expert-led coaching closer to you, whether you prefer in-person or online learning.</p>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-title">Expert Faculty</div>
+            <div class="pillar-desc">Subject specialists with deep Cambridge syllabus knowledge</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-title">Exam-Focused</div>
+            <div class="pillar-desc">Targeted preparation for peak exam performance</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-title">Results-Driven</div>
+            <div class="pillar-desc">4,000+ A* grades and a culture of academic excellence</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-title">Supportive</div>
+            <div class="pillar-desc">A welcoming environment where every student belongs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS -->
+<section id="subjects">
+  <div class="container">
+    <p class="section-eyebrow">What We Teach</p>
+    <h2 class="section-title">Subjects<br><span>We Cover</span></h2>
+    <div class="subjects-tabs" id="subjectTabs">
+      <button class="tab-btn active" data-tab="o-level">O Level & IGCSE</button>
+      <button class="tab-btn" data-tab="a-level">A Level</button>
+    </div>
+    <div class="tab-panel active" id="o-level">
+      <div class="subjects-grid">
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Mathematics</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Additional Mathematics</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Physics</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Chemistry</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Biology</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">English</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Urdu</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Pakistan Studies</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Islamiyat</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Business Studies</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Economics</span></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="a-level">
+      <div class="subjects-grid">
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Economics</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Accounting</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Computer Science</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Physics</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Sociology</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Psychology</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Further Mathematics</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Chemistry Practical</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Physics Practical</span></div>
+        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Biology Practical</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACULTY -->
+<section id="faculty">
+  <div class="container">
+    <p class="section-eyebrow">Our Educators</p>
+    <h2 class="section-title">Meet the Faculty</h2>
+    <p class="section-sub">Subject specialists who bring the Cambridge syllabus to life — with rigour, clarity, and genuine investment in your results.</p>
+
+    <!-- Star Faculty -->
+    <div class="star-faculty" style="margin-top:2.5rem;">
+      <div>
+        <div class="star-avatar-lg">HA</div>
+      </div>
+      <div class="star-faculty-meta">
+        <h3>Sir Hamza Ali</h3>
+        <div class="role">Pakistan Studies (O Level) — Cambridge Certified Educator</div>
+        <div class="star-achievements">
+          <div class="star-ach">
+            <span class="star-ach-n">10 Yrs</span>
+            <span class="star-ach-l">Teaching Experience</span>
+          </div>
+          <div class="star-ach">
+            <span class="star-ach-n">4,000+</span>
+            <span class="star-ach-l">A* Grades</span>
+          </div>
+          <div class="star-ach">
+            <span class="star-ach-n">5,000+</span>
+            <span class="star-ach-l">A Grades</span>
+          </div>
+          <div class="star-ach">
+            <span class="star-ach-n">8K+</span>
+            <span class="star-ach-l">Instagram Followers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subjects-tabs" id="facultyTabs">
+      <button class="tab-btn active" data-tab="f-olevel">O Level Faculty</button>
+      <button class="tab-btn" data-tab="f-alevel">A Level Faculty</button>
+    </div>
+
+    <div class="tab-panel active" id="f-olevel">
+      <div class="faculty-grid">
+        <div class="faculty-card">
+          <div class="faculty-avatar">HA</div>
+          <div class="faculty-name">Hamza Ali</div>
+          <div class="faculty-subject">Pakistan Studies</div>
+          <div class="faculty-note">Cambridge Certified · 10 Years · 4,000+ A*s</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">FM</div>
+          <div class="faculty-name">Fazil Maniya</div>
+          <div class="faculty-subject">Islamiyat</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">RH</div>
+          <div class="faculty-name">Rizwan Haider</div>
+          <div class="faculty-subject">Urdu</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">ZA</div>
+          <div class="faculty-name">Zahid Anwer</div>
+          <div class="faculty-subject">English</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">SL</div>
+          <div class="faculty-name">Shahzaib Latafat</div>
+          <div class="faculty-subject">Mathematics / Add. Maths</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">KR</div>
+          <div class="faculty-name">Kashan Rashid</div>
+          <div class="faculty-subject">Physics</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">DN</div>
+          <div class="faculty-name">Dr. Noor</div>
+          <div class="faculty-subject">Biology / Chemistry</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">MK</div>
+          <div class="faculty-name">Moosa Khan</div>
+          <div class="faculty-subject">Chemistry</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">QB</div>
+          <div class="faculty-name">Qubair Bhoot</div>
+          <div class="faculty-subject">Business Studies</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">FM</div>
+          <div class="faculty-name">Fahad Munaf</div>
+          <div class="faculty-subject">Economics</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="f-alevel">
+      <div class="faculty-grid">
+        <div class="faculty-card">
+          <div class="faculty-avatar">BB</div>
+          <div class="faculty-name">Bilal Bashir</div>
+          <div class="faculty-subject">Economics</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">UY</div>
+          <div class="faculty-name">Uzair Yaqoob</div>
+          <div class="faculty-subject">Accounts</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">NZ</div>
+          <div class="faculty-name">Noman Zafar</div>
+          <div class="faculty-subject">Accounts</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">AK</div>
+          <div class="faculty-name">M. Ali Khan</div>
+          <div class="faculty-subject">Computer Science</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">KA</div>
+          <div class="faculty-name">Kashif Anwer</div>
+          <div class="faculty-subject">Computer Science</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">MA</div>
+          <div class="faculty-name">Maaz Ahmed</div>
+          <div class="faculty-subject">Computer Science</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">MA</div>
+          <div class="faculty-name">Mahad Amer</div>
+          <div class="faculty-subject">Physics</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">AI</div>
+          <div class="faculty-name">Azeem Iqbal</div>
+          <div class="faculty-subject">Sociology / Psychology</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">FA</div>
+          <div class="faculty-name">Farough Ahmed</div>
+          <div class="faculty-subject">Further Mathematics</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">MT</div>
+          <div class="faculty-name">M. Taqi</div>
+          <div class="faculty-subject">Chemistry Practical</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">SJ</div>
+          <div class="faculty-name">Sajjad</div>
+          <div class="faculty-subject">Physics Practical</div>
+        </div>
+        <div class="faculty-card">
+          <div class="faculty-avatar">GM</div>
+          <div class="faculty-name">Ghulam Mustafa</div>
+          <div class="faculty-subject">Biology Practical</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPUSES -->
+<section id="campuses">
+  <div class="container">
+    <p class="section-eyebrow">Find Us</p>
+    <h2 class="section-title">Our <span>Campuses</span></h2>
+    <p class="section-sub">Four campuses across Karachi — and online classes to keep you connected wherever you are.</p>
+    <div class="campuses-grid">
+      <!-- North -->
+      <div class="campus-card">
+        <div class="campus-header">
+          <div class="campus-number">01</div>
+          <div class="campus-name">North Campus</div>
+          <div class="campus-location">North Nazimabad, Karachi</div>
+        </div>
+        <div class="campus-body">
+          <p style="font-size:13px;color:#666;margin-bottom:0.75rem;">Plot No. SC24, Raheem Arcade</p>
+          <a href="tel:03302467468" class="campus-contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
+            0330-2467468
+          </a>
+          <a href="tel:03373549172" class="campus-contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
+            0337-3549172
+          </a>
+          <div class="campus-rating">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.8 / 5 on Google
+          </div>
+        </div>
+      </div>
+      <!-- Gulshan -->
+      <div class="campus-card">
+        <div class="campus-header">
+          <div class="campus-number">02</div>
+          <div class="campus-name">Gulshan Campus</div>
+          <div class="campus-location">Gulshan-e-Iqbal, Karachi</div>
+        </div>
+        <div class="campus-body">
+          <a href="tel:03351356069" class="campus-contact" style="margin-top:0.5rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
+            0335-1356069
+          </a>
+          <a href="tel:03373549171" class="campus-contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
+            0337-3549171
+          </a>
+          <div class="campus-rating">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.6 / 5 on Google
+          </div>
+        </div>
+      </div>
+      <!-- Johar -->
+      <div class="campus-card">
+        <div class="campus-header">
+          <div class="campus-number">03</div>
+          <div class="campus-name">Johar Campus</div>
+          <div class="campus-location">Gulshan-e-Johar, Karachi</div>
+        </div>
+        <div class="campus-body">
+          <a href="tel:03373549170" class="campus-contact" style="margin-top:0.5rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
+            0337-3549170
+          </a>
+        </div>
+      </div>
+      <!-- Bahadurabad -->
+      <div class="campus-card">
+        <div class="campus-header">
+          <div class="campus-number">04</div>
+          <div class="campus-name">Bahadurabad Campus</div>
+          <div class="campus-location">Bahadurabad, Karachi</div>
+        </div>
+        <div class="campus-body">
+          <a href="tel:03362774360" class="campus-contact" style="margin-top:0.5rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
+            0336-2774360
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section id="admissions">
+  <div class="container">
+    <p class="section-eyebrow">Join Us</p>
+    <h2 class="section-title">Admissions Open<br><span>Session 2026–27</span></h2>
+    <div class="admissions-content">
+      <div class="admissions-info">
+        <div class="sessions-open">Admissions Currently Open</div>
+        <h3>O Level, IGCSE & A Level</h3>
+        <p>We are currently enrolling students for our 2026–27 session. Seats are limited at each campus — reach out today to secure your place with one of Karachi's most trusted Cambridge coaching networks.</p>
+        <h3>Online Classes Available</h3>
+        <p>Can't make it in person? Our online classes bring the same quality instruction to your screen. Both on-site and virtual options are available for most subjects.</p>
+        <h3>Contact Any Campus</h3>
+        <p>Walk into any of our four campuses or call the number for your nearest branch to speak directly with our admissions team.</p>
+      </div>
+      <div class="contact-form-wrap">
+        <div class="form-title">Request Information</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="03XX-XXXXXXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Level</label>
+          <select>
+            <option value="">Select level...</option>
+            <option>O Level / IGCSE</option>
+            <option>A Level</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Campus</label>
+          <select>
+            <option value="">Select campus...</option>
+            <option>North Nazimabad Campus</option>
+            <option>Gulshan Campus</option>
+            <option>Johar Campus</option>
+            <option>Bahadurabad Campus</option>
+            <option>Online</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Subject of Interest</label>
+          <input type="text" placeholder="e.g. Mathematics, Physics...">
+        </div>
+        <button class="form-submit" onclick="alert('Thank you! Our team will contact you shortly.')">Submit Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect">
+  <div class="container">
+    <p class="section-eyebrow">Stay Connected</p>
+    <h2 class="section-title">Follow & <span>Reach Out</span></h2>
+    <p class="section-sub">Stay updated with our latest results, announcements, and resources across our social channels.</p>
+    <div class="social-bar">
+      <a href="https://www.instagram.com/the_professionals_institute" target="_blank" class="social-card">
+        <div class="social-icon insta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <div class="social-info">
+          <div class="social-name">Instagram</div>
+          <div class="social-handle">@the_professionals_institute · 1,319+ followers</div>
+        </div>
+      </a>
+      <a href="#" class="social-card">
+        <div class="social-icon fb">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </div>
+        <div class="social-info">
+          <div class="social-name">Facebook</div>
+          <div class="social-handle">The Professionals Core · 2.6K+ followers</div>
+        </div>
+      </a>
+      <a href="#campuses" class="social-card">
+        <div class="social-icon google">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="social-info">
+          <div class="social-name">Google</div>
+          <div class="social-handle">North 4.8★ · Gulshan 4.6★</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">The Professionals Core</div>
+        <p class="footer-brand-desc">"Your Second Home" — A Cambridge coaching network dedicated to O Level, IGCSE, and A Level students across Karachi.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#subjects">Subjects</a></li>
+          <li><a href="#faculty">Faculty</a></li>
+          <li><a href="#campuses">Campuses</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Campuses</div>
+        <ul class="footer-links">
+          <li><a href="tel:03302467468">North Nazimabad</a></li>
+          <li><a href="tel:03351356069">Gulshan</a></li>
+          <li><a href="tel:03373549170">Johar</a></li>
+          <li><a href="tel:03362774360">Bahadurabad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 <span>The Professionals Core</span> · All rights reserved</div>
+      <div>O Levels · A Levels · IGCSE · Karachi</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  function initTabs(tabsId) {
+    const tabs = document.getElementById(tabsId);
+    if (!tabs) return;
+    tabs.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const panel = document.getElementById(btn.dataset.tab);
+        document.querySelectorAll('.tab-panel').forEach(p => {
+          if (p.closest('section') === btn.closest('section')) p.classList.remove('active');
+        });
+        if (panel) panel.classList.add('active');
+      });
+    });
+  }
+
+  initTabs('subjectTabs');
+  initTabs('facultyTabs');
+</script>
+</body>
+</html>
