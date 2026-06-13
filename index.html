@@ -1,1527 +1,903 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Professionals Core – Your Second Home</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MHW — Website Design Studio | Karachi</title>
+<meta name="description" content="MHW Website Design Studio — Professional, affordable, mobile-friendly websites for local businesses in Karachi and worldwide."/>
+<link rel="icon" type="image/svg+xml" id="favicon"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --navy: #0B1F3A;
-    --gold: #C9A84C;
-    --gold-light: #F0D98B;
-    --gold-dark: #8A6A20;
-    --cream: #FDFBF6;
-    --white: #FFFFFF;
-    --gray-100: #F5F4F0;
-    --gray-200: #E8E6DF;
-    --gray-400: #9E9B90;
-    --gray-600: #5C5A53;
-    --gray-800: #2E2D28;
-    --text: #1A1917;
-    --text-muted: #6B6960;
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body: 'Inter', system-ui, sans-serif;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--font-body);
-    background: var(--cream);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(11, 31, 58, 0.97);
-    backdrop-filter: blur(8px);
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 68px;
-    border-bottom: 1px solid rgba(201, 168, 76, 0.25);
-  }
-
-  .nav-logo {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .nav-logo-main {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--gold);
-    letter-spacing: 0.02em;
-    line-height: 1.2;
-  }
-
-  .nav-logo-sub {
-    font-size: 10px;
-    color: rgba(201, 168, 76, 0.6);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: rgba(255,255,255,0.75);
-    font-size: 13.5px;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--gold); }
-
-  .nav-cta {
-    background: var(--gold);
-    color: var(--navy) !important;
-    padding: 8px 20px;
-    border-radius: 4px;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-  }
-
-  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-  }
-
-  .hamburger span {
-    width: 22px;
-    height: 2px;
-    background: var(--gold);
-    border-radius: 2px;
-    display: block;
-  }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    background: var(--navy);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 6rem 2rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 70% 50% at 50% 80%, rgba(201,168,76,0.07) 0%, transparent 70%),
-      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.3);
-    color: var(--gold);
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 6px 18px;
-    border-radius: 100px;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
-  }
-
-  .hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1.1;
-    max-width: 800px;
-    margin: 0 auto 1rem;
-  }
-
-  .hero h1 span { color: var(--gold); }
-
-  .hero-tagline {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: rgba(255,255,255,0.6);
-    font-style: italic;
-    font-family: var(--font-display);
-    margin-bottom: 2rem;
-  }
-
-  .hero-desc {
-    font-size: 16px;
-    color: rgba(255,255,255,0.55);
-    max-width: 520px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.8;
-  }
-
-  .hero-btns {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--gold);
-    color: var(--navy);
-    padding: 14px 32px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    transition: background 0.2s, transform 0.15s;
-    display: inline-block;
-  }
-
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-  .btn-outline {
-    border: 1.5px solid rgba(255,255,255,0.25);
-    color: rgba(255,255,255,0.8);
-    padding: 14px 32px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    transition: border-color 0.2s, color 0.2s;
-    display: inline-block;
-  }
-
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-  .hero-stats {
-    display: flex;
-    gap: 3rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    width: 100%;
-    max-width: 700px;
-  }
-
-  .hero-stat { text-align: center; }
-
-  .hero-stat-num {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--gold);
-    display: block;
-    line-height: 1;
-  }
-
-  .hero-stat-label {
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 4px;
-    display: block;
-  }
-
-  /* SECTION WRAPPER */
-  section { padding: 5rem 2rem; }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    font-weight: 600;
-    margin-bottom: 0.6rem;
-  }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-
-  .section-title span { color: var(--gold-dark); }
-
-  .section-sub {
-    font-size: 16px;
-    color: var(--text-muted);
-    max-width: 560px;
-    line-height: 1.8;
-  }
-
-  /* ABOUT */
-  #about { background: var(--white); }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-    margin-top: 3rem;
-  }
-
-  .about-visual {
-    background: var(--navy);
-    border-radius: 8px;
-    padding: 3rem 2.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .about-visual::before {
-    content: '';
-    position: absolute;
-    bottom: -30px; right: -30px;
-    width: 200px; height: 200px;
-    background: rgba(201,168,76,0.08);
-    border-radius: 50%;
-  }
-
-  .about-quote {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    color: var(--white);
-    line-height: 1.5;
-    font-style: italic;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-quote span { color: var(--gold); }
-
-  .about-visual-stats {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .astat { border-left: 2px solid var(--gold); padding-left: 1rem; }
-
-  .astat-n {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    color: var(--gold);
-    font-weight: 700;
-    display: block;
-    line-height: 1;
-  }
-
-  .astat-l {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-top: 2px;
-    display: block;
-  }
-
-  .about-text h3 {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    color: var(--navy);
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-  }
-
-  .about-text p {
-    color: var(--text-muted);
-    line-height: 1.85;
-    margin-bottom: 1.25rem;
-    font-size: 15px;
-  }
-
-  .pillars {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .pillar {
-    background: var(--gray-100);
-    border-radius: 6px;
-    padding: 1rem 1.25rem;
-    border-left: 3px solid var(--gold);
-  }
-
-  .pillar-title {
-    font-weight: 600;
-    font-size: 13.5px;
-    color: var(--navy);
-    margin-bottom: 3px;
-  }
-
-  .pillar-desc {
-    font-size: 12.5px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  /* SUBJECTS */
-  #subjects { background: var(--cream); }
-
-  .subjects-tabs {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 2.5rem;
-    margin-top: 2.5rem;
-    border-bottom: 2px solid var(--gray-200);
-    padding-bottom: 0;
-  }
-
-  .tab-btn {
-    padding: 10px 24px;
-    background: none;
-    border: none;
-    border-bottom: 3px solid transparent;
-    margin-bottom: -2px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-muted);
-    font-family: var(--font-body);
-    letter-spacing: 0.03em;
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  .tab-btn.active { color: var(--navy); border-bottom-color: var(--gold); }
-  .tab-btn:hover { color: var(--navy); }
-
-  .tab-panel { display: none; }
-  .tab-panel.active { display: block; }
-
-  .subjects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-
-  .subject-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .subject-card:hover {
-    border-color: var(--gold);
-    box-shadow: 0 4px 16px rgba(11,31,58,0.06);
-  }
-
-  .subject-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--gold);
-    flex-shrink: 0;
-  }
-
-  .subject-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--navy);
-  }
-
-  /* FACULTY */
-  #faculty { background: var(--navy); }
-
-  #faculty .section-title { color: var(--white); }
-  #faculty .section-eyebrow { color: var(--gold); }
-  #faculty .section-sub { color: rgba(255,255,255,0.5); }
-
-  #faculty .subjects-tabs { border-bottom-color: rgba(255,255,255,0.12); }
-  #faculty .tab-btn { color: rgba(255,255,255,0.45); }
-  #faculty .tab-btn.active { color: var(--white); border-bottom-color: var(--gold); }
-  #faculty .tab-btn:hover { color: var(--white); }
-
-  .faculty-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .faculty-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: background 0.2s, border-color 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .faculty-card:hover {
-    background: rgba(201,168,76,0.08);
-    border-color: rgba(201,168,76,0.3);
-  }
-
-  .faculty-card.featured {
-    border-color: rgba(201,168,76,0.5);
-    background: rgba(201,168,76,0.07);
-  }
-
-  .faculty-badge {
-    position: absolute;
-    top: 12px; right: 12px;
-    background: var(--gold);
-    color: var(--navy);
-    font-size: 10px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 100px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .faculty-avatar {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: rgba(201,168,76,0.15);
-    border: 1.5px solid rgba(201,168,76,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    flex-shrink: 0;
-  }
-
-  .faculty-name {
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--white);
-    margin-bottom: 3px;
-  }
-
-  .faculty-subject {
-    font-size: 13px;
-    color: var(--gold);
-    font-style: italic;
-  }
-
-  .faculty-note {
-    font-size: 12px;
-    color: rgba(255,255,255,0.4);
-    margin-top: 0.5rem;
-    line-height: 1.4;
-  }
-
-  /* STAR FACULTY */
-  .star-faculty {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2.5rem;
-    background: rgba(201,168,76,0.06);
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 12px;
-    padding: 2.5rem;
-    margin-bottom: 2.5rem;
-    align-items: center;
-  }
-
-  .star-avatar-lg {
-    width: 110px; height: 110px;
-    border-radius: 50%;
-    background: rgba(201,168,76,0.15);
-    border: 2px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--gold);
-    margin: 0 auto;
-  }
-
-  .star-faculty-meta h3 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-
-  .star-faculty-meta .role {
-    color: var(--gold);
-    font-size: 14px;
-    margin-bottom: 1rem;
-  }
-
-  .star-achievements {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .star-ach {
-    text-align: center;
-  }
-
-  .star-ach-n {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    color: var(--gold);
-    font-weight: 700;
-    display: block;
-    line-height: 1;
-  }
-
-  .star-ach-l {
-    font-size: 11px;
-    color: rgba(255,255,255,0.45);
-    display: block;
-    margin-top: 2px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  /* CAMPUSES */
-  #campuses { background: var(--white); }
-
-  .campuses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-
-  .campus-card {
-    border: 1px solid var(--gray-200);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: box-shadow 0.2s, transform 0.15s;
-  }
-
-  .campus-card:hover {
-    box-shadow: 0 8px 32px rgba(11,31,58,0.08);
-    transform: translateY(-2px);
-  }
-
-  .campus-header {
-    background: var(--navy);
-    padding: 1.5rem;
-    position: relative;
-  }
-
-  .campus-number {
-    font-family: var(--font-display);
-    font-size: 3rem;
-    font-weight: 900;
-    color: rgba(201,168,76,0.15);
-    position: absolute;
-    right: 1rem; top: 0.5rem;
-    line-height: 1;
-  }
-
-  .campus-name {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    color: var(--white);
-    font-weight: 700;
-    position: relative;
-    z-index: 1;
-  }
-
-  .campus-location {
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
-    margin-top: 3px;
-  }
-
-  .campus-body { padding: 1.25rem 1.5rem; }
-
-  .campus-contact {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 13.5px;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-  }
-
-  .campus-contact:hover { color: var(--navy); }
-
-  .campus-contact svg {
-    width: 15px; height: 15px;
-    flex-shrink: 0;
-    color: var(--gold-dark);
-  }
-
-  .campus-rating {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: #FFF8E7;
-    color: #8A6A20;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 100px;
-    margin-top: 0.5rem;
-  }
-
-  /* ADMISSIONS */
-  #admissions {
-    background: linear-gradient(135deg, var(--navy) 0%, #0D2545 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  #admissions::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 400px; height: 400px;
-    background: rgba(201,168,76,0.05);
-    border-radius: 50%;
-  }
-
-  #admissions .section-title { color: var(--white); }
-  #admissions .section-eyebrow { color: var(--gold); }
-
-  .admissions-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 3rem;
-    align-items: start;
-  }
-
-  .admissions-info h3 {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    color: var(--white);
-    margin-bottom: 1rem;
-  }
-
-  .admissions-info p {
-    color: rgba(255,255,255,0.55);
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-
-  .sessions-open {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.3);
-    color: var(--gold);
-    font-size: 13px;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 100px;
-    margin-bottom: 1.5rem;
-  }
-
-  .sessions-open::before {
-    content: '';
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--gold);
-    animation: pulse 1.5s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  .contact-form-wrap {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 2rem;
-  }
-
-  .form-title {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    color: var(--white);
-    margin-bottom: 1.5rem;
-  }
-
-  .form-group { margin-bottom: 1rem; }
-
-  .form-group label {
-    display: block;
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 6px;
-  }
-
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 5px;
-    padding: 10px 14px;
-    color: var(--white);
-    font-size: 14px;
-    font-family: var(--font-body);
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .form-group input::placeholder { color: rgba(255,255,255,0.3); }
-  .form-group input:focus,
-  .form-group select:focus { border-color: var(--gold); }
-
-  .form-group select { color: rgba(255,255,255,0.7); }
-  .form-group select option { background: var(--navy); color: var(--white); }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-  .form-submit {
-    width: 100%;
-    background: var(--gold);
-    color: var(--navy);
-    border: none;
-    border-radius: 5px;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: var(--font-body);
-    cursor: pointer;
-    margin-top: 0.5rem;
-    letter-spacing: 0.05em;
-    transition: background 0.2s;
-  }
-
-  .form-submit:hover { background: var(--gold-light); }
-
-  /* SOCIAL */
-  #connect { background: var(--cream); }
-
-  .social-bar {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 2.5rem;
-  }
-
-  .social-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: 10px;
-    padding: 1.25rem 1.75rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    flex: 1;
-    min-width: 180px;
-  }
-
-  .social-card:hover {
-    border-color: var(--gold);
-    box-shadow: 0 4px 16px rgba(11,31,58,0.06);
-  }
-
-  .social-icon {
-    width: 40px; height: 40px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-
-  .social-icon.insta { background: #F5ECF8; color: #8B2FC9; }
-  .social-icon.fb { background: #EAF0FB; color: #1877F2; }
-  .social-icon.google { background: #FDECEA; color: #EA4335; }
-  .social-icon.web { background: var(--gray-100); color: var(--navy); }
-
-  .social-info {}
-  .social-name { font-weight: 600; font-size: 14px; color: var(--navy); }
-  .social-handle { font-size: 12.5px; color: var(--text-muted); }
-
-  /* FOOTER */
-  footer {
-    background: var(--gray-800);
-    padding: 3rem 2rem 1.5rem;
-    color: rgba(255,255,255,0.5);
-  }
-
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    margin-bottom: 1.5rem;
-  }
-
-  .footer-brand-name {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-brand-desc {
-    font-size: 13.5px;
-    line-height: 1.7;
-    max-width: 300px;
-  }
-
-  .footer-col-title {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
-
-  .footer-links { list-style: none; }
-
-  .footer-links li { margin-bottom: 0.6rem; }
-
-  .footer-links a {
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    font-size: 13.5px;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--gold); }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12.5px;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .footer-bottom span { color: var(--gold); }
-
-  /* MOBILE */
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .nav-links.open {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 68px; left: 0; right: 0;
-      background: var(--navy);
-      padding: 1.5rem;
-      gap: 1.25rem;
-      border-top: 1px solid rgba(201,168,76,0.2);
-    }
-    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .admissions-content { grid-template-columns: 1fr; gap: 2.5rem; }
-    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-stats { gap: 2rem; }
-    .star-faculty { grid-template-columns: 1fr; text-align: center; }
-    .form-row { grid-template-columns: 1fr; }
-  }
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+:root{
+  --bg:#06080a;--bg2:#0a0d10;--bg3:#0f1318;--bg4:#151b22;
+  --text:#f0ede8;--text2:#8899aa;--text3:#445566;
+  --accent:#d4c5a9;--accent2:#c4b090;--accentl:#e8dfd0;
+  --border:#1a2030;--border2:#243040;--card:#0c1018;--nav:#06080af5;
+  --glow:rgba(212,197,169,.1);--logo-filter:sepia(0.3) saturate(0.8) brightness(1.1);
+}
+.theme-ocean{--bg:#020c18;--bg2:#030f20;--bg3:#041428;--bg4:#061830;--text:#d8eeff;--text2:#5588bb;--accent:#4da8e8;--accent2:#2880cc;--accentl:#90caf8;--border:#0a2040;--border2:#102848;--card:#030e1c;--nav:#020c18f5;--glow:rgba(77,168,232,.12);--logo-filter:sepia(1) saturate(3) hue-rotate(185deg) brightness(1.2);}
+.theme-forest{--bg:#040c06;--bg2:#060f08;--bg3:#08140a;--bg4:#0c1c0e;--text:#d8f0da;--text2:#558855;--accent:#44cc55;--accent2:#2a9e38;--accentl:#88e894;--border:#102010;--border2:#183018;--card:#060e07;--nav:#040c06f5;--glow:rgba(68,204,85,.12);--logo-filter:sepia(1) saturate(3) hue-rotate(88deg) brightness(1.1);}
+.theme-violet{--bg:#08040e;--bg2:#0c0815;--bg3:#110c1e;--bg4:#161028;--text:#eadcff;--text2:#8855cc;--accent:#9966ff;--accent2:#7744dd;--accentl:#c4aaff;--border:#1e1038;--border2:#281845;--card:#0c0818;--nav:#08040ef5;--glow:rgba(153,102,255,.12);--logo-filter:sepia(1) saturate(3) hue-rotate(240deg) brightness(1.2);}
+.theme-rose{--bg:#0e0408;--bg2:#140608;--bg3:#1c0a0e;--bg4:#240e14;--text:#ffdde8;--text2:#cc5577;--accent:#ee4477;--accent2:#cc2255;--accentl:#ff99bb;--border:#2a0e18;--border2:#381520;--card:#100508;--nav:#0e0408f5;--glow:rgba(238,68,119,.12);--logo-filter:sepia(1) saturate(3) hue-rotate(300deg) brightness(1.2);}
+
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;scroll-behavior:smooth;line-height:1.65;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+
+/* SCROLL TOP */
+.scroll-top{position:fixed;bottom:1.5rem;left:1.5rem;z-index:300;width:46px;height:46px;background:var(--bg4);border:1px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:all .3s;color:var(--accent);}
+.scroll-top.visible{opacity:1;pointer-events:all;}
+.scroll-top:hover{background:var(--accent);color:#0a0a0a;transform:translateY(-3px);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--nav);border-bottom:1px solid var(--border);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;height:68px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:11px;cursor:pointer;flex-shrink:0;}
+.logo-img{width:48px;height:48px;border-radius:50%;overflow:hidden;border:1.5px solid var(--accent);background:#000;flex-shrink:0;transition:all .35s;box-shadow:0 0 0 0 var(--glow);}
+.logo-img:hover{box-shadow:0 0 20px var(--glow);transform:scale(1.06);}
+.logo-img img{width:100%;height:100%;object-fit:cover;display:block;filter:var(--logo-filter);transition:filter .35s;}
+.logo-words .name{font-family:'Space Grotesk',sans-serif;font-size:.98rem;font-weight:700;color:var(--accent);letter-spacing:.02em;transition:color .35s;white-space:nowrap;}
+.logo-words .sub{font-size:.58rem;color:var(--text3);text-transform:uppercase;letter-spacing:.14em;white-space:nowrap;}
+.nav-links{display:flex;align-items:center;gap:.1rem;}
+.nav-links a{font-size:.83rem;color:var(--text2);padding:.5rem .88rem;border-radius:8px;transition:all .2s;white-space:nowrap;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:4px;left:50%;right:50%;height:1.5px;background:var(--accent);transition:all .22s;border-radius:2px;}
+.nav-links a:hover{color:var(--text);}
+.nav-links a:hover::after{left:12px;right:12px;}
+.nav-cta{background:var(--accent)!important;color:#0a0a0a!important;font-weight:700!important;border-radius:9px!important;}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{opacity:.88!important;transform:translateY(-1px);}
+.hmbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.5rem;}
+.hmbg span{display:block;width:23px;height:1.8px;background:var(--text2);border-radius:2px;transition:.3s;}
+.hmbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hmbg.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.hmbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;z-index:190;background:var(--bg);overflow-y:auto;}
+.mob-menu.open{display:block;}
+.mob-inner{padding:1.5rem;display:flex;flex-direction:column;gap:.35rem;}
+.mob-inner a{display:flex;align-items:center;gap:.8rem;padding:1.05rem 1.25rem;font-size:1rem;font-weight:500;color:var(--text2);border-radius:12px;transition:all .2s;border:1px solid transparent;}
+.mob-inner a i{font-size:1.1rem;color:var(--accent);flex-shrink:0;}
+.mob-inner a:hover,.mob-inner a:active{color:var(--text);background:var(--bg3);border-color:var(--border2);}
+.mob-cta{background:var(--accent)!important;color:#0a0a0a!important;font-weight:700!important;justify-content:center!important;margin-top:.75rem;border-radius:12px!important;border:none!important;}
+.mob-div{border:none;border-top:1px solid var(--border);margin:.75rem 0;}
+.mob-ci-row{display:flex;flex-direction:column;gap:.55rem;}
+.mob-ci{display:flex;align-items:center;gap:.85rem;padding:.88rem 1.1rem;background:var(--bg3);border-radius:12px;font-size:.9rem;color:var(--text2);border:1px solid var(--border);}
+.mob-ci i{font-size:1.1rem;color:var(--accent);flex-shrink:0;}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 1.5rem 3.5rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;opacity:.05;z-index:0;}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,var(--glow) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,var(--glow) 0%,transparent 60%);z-index:0;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:50px 50px;opacity:.3;z-index:0;}
+.hero-c{position:relative;z-index:1;max-width:720px;width:100%;}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg3);border:1px solid var(--border2);color:var(--text2);font-size:.74rem;padding:.42rem 1.1rem;border-radius:24px;margin-bottom:1.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;}
+.hero-pill i{color:var(--accent);font-size:.88rem;}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,7vw,5rem);font-weight:800;line-height:1.04;letter-spacing:-.035em;margin-bottom:1.35rem;}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.hero h1 span{display:block;}
+.hero-desc{font-size:1.08rem;color:var(--text2);max-width:460px;margin:0 auto 2.35rem;line-height:1.78;}
+.hero-btns{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem;}
+.btn-p{background:var(--accent);color:#0a0a0a;font-weight:700;padding:.95rem 1.95rem;border-radius:12px;font-size:1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .22s;min-height:54px;box-shadow:0 4px 20px var(--glow);}
+.btn-p:hover,.btn-p:active{opacity:.88;transform:translateY(-3px);box-shadow:0 8px 30px var(--glow);}
+.btn-o{border:1.5px solid var(--border2);color:var(--text);padding:.95rem 1.95rem;border-radius:12px;font-size:1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .22s;min-height:54px;background:var(--bg3);}
+.btn-o:hover,.btn-o:active{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);}
+.hero-stats{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat .num{font-family:'Space Grotesk',sans-serif;font-size:2.1rem;font-weight:800;color:var(--accent);line-height:1;}
+.stat .lbl{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.11em;margin-top:.3rem;}
+
+/* MARQUEE */
+.marquee-strip{background:var(--accent);padding:.75rem 0;overflow:hidden;white-space:nowrap;}
+.marquee-inner{display:inline-flex;animation:marquee 28s linear infinite;}
+.marquee-item{font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:#0a0a0a;letter-spacing:.1em;text-transform:uppercase;padding:0 2rem;}
+.marquee-dot{color:rgba(0,0,0,.35);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* STATS COUNTER BAR */
+.stats-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3rem 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;}
+.counter-card{padding:1.5rem;border-right:1px solid var(--border);}
+.counter-card:last-child{border-right:none;}
+.counter-num{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:800;color:var(--accent);line-height:1;display:block;}
+.counter-lbl{font-size:.75rem;color:var(--text2);text-transform:uppercase;letter-spacing:.1em;margin-top:.4rem;display:block;}
+
+/* SECTIONS */
+section{padding:5.5rem 0;}
+.sec-eye{font-size:.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-weight:700;margin-bottom:.65rem;}
+.sec-h{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.85rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:.9rem;}
+.sec-h em{font-style:normal;color:var(--accent);}
+.sec-rule{width:40px;height:2.5px;background:var(--accent);margin:1rem 0 2.5rem;border-radius:2px;transition:background .35s;}
+.sec-sub{color:var(--text2);font-size:.98rem;line-height:1.75;max-width:520px;}
+
+/* UNIVERSAL CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;transition:all .25s;cursor:default;}
+.card:hover,.card:active{border-color:var(--accent);transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.4),0 0 0 1px var(--accent);}
+
+/* SERVICES */
+.srv-banner{width:100%;height:240px;border-radius:18px;overflow:hidden;border:1px solid var(--border);margin-bottom:2.5rem;position:relative;}
+.srv-banner img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
+.srv-banner:hover img{transform:scale(1.04);}
+.srv-banner-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(6,8,10,.85),transparent);}
+.srv-banner-txt{position:absolute;top:50%;left:2rem;transform:translateY(-50%);z-index:1;}
+.srv-banner-txt h3{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.35rem;}
+.srv-banner-txt p{font-size:.85rem;color:var(--text2);}
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;}
+.srv-card{padding:1.6rem;}
+.srv-ic{width:50px;height:50px;background:var(--bg3);border:1px solid var(--border2);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--accent);margin-bottom:1.1rem;transition:all .25s;}
+.card:hover .srv-ic{background:var(--bg4);border-color:var(--accent);transform:scale(1.1);}
+.srv-card h3{font-size:.95rem;font-weight:700;margin-bottom:.48rem;}
+.srv-card p{font-size:.81rem;color:var(--text2);line-height:1.62;}
+.srv-price{font-size:.76rem;color:var(--accent);margin-top:.8rem;font-weight:600;display:flex;align-items:center;gap:.35rem;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+.about-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:185px 185px;gap:.85rem;}
+.aimg{border-radius:14px;overflow:hidden;border:1px solid var(--border);transition:all .25s;}
+.aimg:hover{border-color:var(--accent);transform:scale(1.02);}
+.aimg img{width:100%;height:100%;object-fit:cover;transition:transform .45s;}
+.aimg:hover img{transform:scale(1.08);}
+.aimg.tall{grid-row:span 2;}
+.about-p{font-size:.96rem;color:var(--text2);line-height:1.77;margin-bottom:1rem;}
+.atags{display:flex;flex-wrap:wrap;gap:.42rem;margin-top:1.35rem;}
+.atag{background:var(--bg3);border:1px solid var(--border2);color:var(--text2);font-size:.73rem;padding:.3rem .82rem;border-radius:20px;transition:all .2s;cursor:default;}
+.atag:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+.qbox{border-left:2.5px solid var(--accent);padding:1rem 1.25rem;background:var(--bg3);border-radius:0 12px 12px 0;margin-top:1.5rem;}
+.qbox p{font-size:.88rem;color:var(--text);line-height:1.72;font-style:italic;}
+
+/* PORTFOLIO */
+.port-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.35rem;}
+.port-card{border-radius:18px;overflow:hidden;display:flex;flex-direction:column;}
+.port-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px var(--accent);}
+.port-thumb{height:200px;overflow:hidden;position:relative;flex-shrink:0;}
+.port-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.port-card:hover .port-thumb img{transform:scale(1.08);}
+.port-over{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .28s;}
+.port-card:hover .port-over{opacity:1;}
+.port-over-btn{background:var(--accent);color:#0a0a0a;font-size:.85rem;font-weight:700;padding:.65rem 1.35rem;border-radius:10px;display:flex;align-items:center;gap:.4rem;transform:translateY(8px);transition:transform .28s;}
+.port-card:hover .port-over-btn{transform:translateY(0);}
+.port-live{position:absolute;top:.85rem;left:.85rem;background:var(--accent);color:#0a0a0a;font-size:.62rem;font-weight:700;padding:.22rem .65rem;border-radius:20px;}
+.port-body{padding:1.4rem;flex:1;display:flex;flex-direction:column;}
+.port-body h3{font-family:'Space Grotesk',sans-serif;font-size:.98rem;font-weight:700;margin-bottom:.4rem;}
+.port-body p{font-size:.82rem;color:var(--text2);line-height:1.65;margin-bottom:1.1rem;flex:1;}
+.port-tags{display:flex;gap:.38rem;flex-wrap:wrap;margin-bottom:1rem;}
+.port-tag{font-size:.67rem;background:var(--bg3);border:1px solid var(--border2);color:var(--text3);padding:.2rem .6rem;border-radius:20px;}
+.port-link{display:inline-flex;align-items:center;gap:.38rem;font-size:.83rem;color:var(--accent);font-weight:600;background:var(--bg3);border:1px solid var(--border2);padding:.55rem 1.1rem;border-radius:9px;transition:all .2s;align-self:flex-start;}
+.port-link:hover{border-color:var(--accent);background:var(--bg4);transform:translateY(-1px);}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem;}
+.testi-card{padding:1.6rem;position:relative;}
+.testi-card::before{content:'\201C';font-family:'Space Grotesk',sans-serif;font-size:4rem;color:var(--accent);opacity:.2;position:absolute;top:.5rem;left:1.2rem;line-height:1;}
+.testi-text{font-size:.88rem;color:var(--text2);line-height:1.72;margin-bottom:1.25rem;padding-top:1.5rem;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:.75rem;}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:var(--bg3);border:1.5px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--accent);flex-shrink:0;}
+.testi-name{font-size:.88rem;font-weight:700;}
+.testi-role{font-size:.74rem;color:var(--text3);}
+.testi-stars{color:var(--accent);font-size:.85rem;margin-top:.2rem;letter-spacing:.1rem;}
+
+/* PROCESS */
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem;margin-top:2.5rem;}
+.proc-card{padding:1.6rem;text-align:center;}
+.proc-num{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:800;color:var(--border2);margin-bottom:.85rem;transition:color .25s;line-height:1;}
+.card:hover .proc-num{color:var(--accent);}
+.proc-card h3{font-size:.93rem;font-weight:700;margin-bottom:.45rem;}
+.proc-card p{font-size:.81rem;color:var(--text2);line-height:1.62;}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem;}
+.price-card{padding:1.85rem;display:flex;flex-direction:column;}
+.price-card.hot{border-color:var(--accent);box-shadow:0 0 30px var(--glow);}
+.p-badge{display:inline-block;font-size:.67rem;background:var(--accent);color:#0a0a0a;font-weight:700;padding:.24rem .75rem;border-radius:20px;margin-bottom:.75rem;}
+.p-name{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:.25rem;}
+.p-price{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);line-height:1;margin:.5rem 0 .28rem;}
+.p-price span{font-size:.83rem;color:var(--text2);font-weight:400;}
+.p-desc{font-size:.81rem;color:var(--text2);margin-bottom:1.35rem;line-height:1.57;flex:1;}
+.p-feats{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.65rem;}
+.p-feats li{font-size:.83rem;color:var(--text2);display:flex;align-items:flex-start;gap:.5rem;line-height:1.4;}
+.p-feats li i{color:var(--accent);font-size:.88rem;flex-shrink:0;margin-top:.1rem;}
+.p-btn{display:flex;align-items:center;justify-content:center;gap:.45rem;width:100%;padding:.88rem 1rem;border-radius:11px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .22s;text-align:center;min-height:50px;}
+.p-btn:hover{transform:translateY(-2px);}
+.p-btn-fill{background:var(--accent);color:#0a0a0a;border:none;box-shadow:0 4px 16px var(--glow);}
+.p-btn-fill:hover{opacity:.88;box-shadow:0 8px 24px var(--glow);}
+.p-btn-out{background:none;border:1.5px solid var(--border2);color:var(--text);}
+.p-btn-out:hover{border-color:var(--accent);color:var(--accent);}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;}
+.blog-card{border-radius:16px;overflow:hidden;display:flex;flex-direction:column;}
+.blog-thumb{height:175px;overflow:hidden;flex-shrink:0;}
+.blog-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.blog-card:hover .blog-thumb img{transform:scale(1.07);}
+.blog-body{padding:1.35rem;flex:1;display:flex;flex-direction:column;}
+.blog-cat{font-size:.67rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;}
+.blog-body h3{font-size:.93rem;font-weight:700;margin-bottom:.45rem;line-height:1.4;}
+.blog-body p{font-size:.8rem;color:var(--text2);line-height:1.65;flex:1;margin-bottom:1rem;}
+.blog-meta{display:flex;align-items:center;justify-content:space-between;font-size:.72rem;color:var(--text3);}
+.blog-read{color:var(--accent);font-weight:600;display:inline-flex;align-items:center;gap:.3rem;transition:gap .2s;}
+.blog-card:hover .blog-read{gap:.55rem;}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.75rem;align-items:start;}
+.c-info{display:flex;flex-direction:column;gap:.8rem;}
+.c-photo{width:100%;height:195px;border-radius:16px;overflow:hidden;border:1px solid var(--border);}
+.c-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.c-photo:hover img{transform:scale(1.05);}
+.c-item{display:flex;align-items:center;gap:.9rem;background:var(--card);border:1px solid var(--border);border-radius:13px;padding:1rem 1.2rem;transition:all .22s;}
+.c-item:hover,.c-item:active{border-color:var(--accent);transform:translateX(5px);box-shadow:0 4px 20px rgba(0,0,0,.3);}
+.c-item i{font-size:1.2rem;color:var(--accent);flex-shrink:0;}
+.c-lbl{font-size:.72rem;color:var(--text3);}
+.c-val{font-size:.92rem;font-weight:600;}
+.wa-big{background:var(--accent);color:#0a0a0a;font-weight:700;border-radius:13px;padding:1.15rem 1.35rem;display:flex;align-items:center;justify-content:center;gap:.6rem;font-size:1rem;transition:all .22s;min-height:56px;box-shadow:0 4px 20px var(--glow);}
+.wa-big:hover,.wa-big:active{opacity:.88;transform:translateY(-3px);box-shadow:0 10px 30px var(--glow);}
+.c-form{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.85rem;}
+.c-form h3{font-family:'Space Grotesk',sans-serif;font-size:1.08rem;font-weight:700;margin-bottom:1.4rem;}
+.fg{margin-bottom:1rem;}
+.fg label{font-size:.78rem;color:var(--text2);display:block;margin-bottom:.42rem;font-weight:500;}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--bg3);border:1px solid var(--border2);color:var(--text);padding:.78rem 1rem;border-radius:11px;font-size:.92rem;font-family:'Inter',sans-serif;outline:none;transition:all .2s;min-height:50px;}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow);}
+.fg textarea{resize:vertical;min-height:92px;}
+.fg select option{background:var(--bg3);}
+.f-sub{width:100%;background:var(--accent);color:#0a0a0a;font-weight:700;padding:.9rem;border:none;border-radius:11px;cursor:pointer;font-family:'Inter',sans-serif;font-size:.97rem;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:54px;box-shadow:0 4px 16px var(--glow);}
+.f-sub:hover,.f-sub:active{opacity:.88;transform:translateY(-2px);box-shadow:0 8px 24px var(--glow);}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:300;width:58px;height:58px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px var(--glow);transition:all .25s;cursor:pointer;}
+.wa-float:hover,.wa-float:active{transform:scale(1.12);box-shadow:0 8px 32px var(--glow);}
+.wa-float i{font-size:1.6rem;color:#0a0a0a;}
+
+/* THEME BAR */
+.tbar{background:var(--bg2);border-top:1px solid var(--border);padding:1.15rem 1.5rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+.tbar-lbl{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.11em;margin-right:.25rem;flex-shrink:0;}
+.tbtn{background:none;border:1px solid var(--border2);color:var(--text2);padding:.42rem .92rem;border-radius:24px;cursor:pointer;font-size:.76rem;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:.42rem;min-height:36px;transition:all .2s;}
+.tbtn:hover,.tbtn:active,.tbtn.on{border-color:var(--accent);color:var(--accent);}
+.tdot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:3rem 1.5rem 2rem;}
+.foot-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:3rem;margin-bottom:2.25rem;}
+.foot-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
+.foot-logo-img{width:46px;height:46px;border-radius:50%;overflow:hidden;border:1.5px solid var(--accent);background:#000;}
+.foot-logo-img img{width:100%;height:100%;object-fit:cover;filter:var(--logo-filter);transition:filter .35s;}
+.foot-brand-name{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--accent);transition:color .35s;}
+.foot-p{font-size:.83rem;color:var(--text3);line-height:1.68;max-width:280px;margin-bottom:1.25rem;}
+.foot-social{display:flex;gap:.55rem;flex-wrap:wrap;}
+.fsoc{width:38px;height:38px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .22s;}
+.fsoc:hover,.fsoc:active{border-color:var(--accent);transform:translateY(-3px);}
+.fsoc i{font-size:.98rem;color:var(--text2);transition:color .2s;}
+.fsoc:hover i{color:var(--accent);}
+.foot-col h4{font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:1.1rem;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+.foot-col ul li a{font-size:.84rem;color:var(--text3);transition:all .2s;display:inline-flex;align-items:center;gap:.35rem;}
+.foot-col ul li a:hover{color:var(--accent);transform:translateX(3px);}
+.foot-bottom{max-width:1100px;margin:0 auto;border-top:1px solid var(--border);padding-top:1.35rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;}
+.foot-bottom p{font-size:.79rem;color:var(--text3);}
+.foot-bottom a{color:var(--accent);}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none;} .hmbg{display:flex;}
+  section{padding:3.75rem 0;}
+  .sec-h{font-size:1.9rem;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;}
+  .about-imgs{grid-template-rows:150px 150px;order:-1;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .counter-card{border-right:none;border-bottom:1px solid var(--border);}
+  .hero{padding:4.5rem 1.25rem 3rem;}
+  .hero h1{font-size:clamp(2.1rem,9vw,3.4rem);}
+  .hero-btns{flex-direction:column;align-items:center;}
+  .btn-p,.btn-o{width:100%;max-width:320px;justify-content:center;}
+  .hero-stats{gap:1.5rem;}
+  .stat .num{font-size:1.8rem;}
+  .tbar{justify-content:center;}
+  .foot-grid{grid-template-columns:1fr;}
+  .foot-bottom{flex-direction:column;align-items:flex-start;}
+  .scroll-top{bottom:5rem;left:1.1rem;}
+}
+@media(max-width:420px){
+  .srv-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:2rem;}
+  .hero-stats{gap:1rem;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+}
 </style>
 </head>
 <body>
 
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="ti ti-arrow-up" style="font-size:1.1rem;"></i>
+</button>
+
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <span class="nav-logo-main">The Professionals Core</span>
-    <span class="nav-logo-sub">Cambridge Education Network</span>
-  </div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#subjects">Subjects</a></li>
-    <li><a href="#faculty">Faculty</a></li>
-    <li><a href="#campuses">Campuses</a></li>
-    <li><a href="#admissions" class="nav-cta">Admissions Open</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
+  <div class="nav-inner">
+    <div class="logo" onclick="goTo('home')">
+      <div class="logo-img"><img id="navLogo" src="" alt="MHW Logo"/></div>
+      <div class="logo-words">
+        <div class="name">MHW</div>
+        <div class="sub">Website Design Studio</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#blog">Blog</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="nav-cta">Get Started</a>
+    </div>
+    <button class="hmbg" id="hmbg" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">Admissions Open — Session 2026–27</div>
-  <h1>Excellence in<br><span>Cambridge Education</span></h1>
-  <p class="hero-tagline">"Your Second Home"</p>
-  <p class="hero-desc">
-    Karachi's dedicated O Level, IGCSE & A Level coaching network — where students don't just prepare for exams, they build their futures.
-  </p>
-  <div class="hero-btns">
-    <a href="#admissions" class="btn-primary">Apply Now</a>
-    <a href="#subjects" class="btn-outline">Explore Subjects</a>
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-inner">
+    <a href="#home" onclick="closeMenu()"><i class="ti ti-home"></i>Home</a>
+    <a href="#about" onclick="closeMenu()"><i class="ti ti-info-circle"></i>About</a>
+    <a href="#services" onclick="closeMenu()"><i class="ti ti-device-laptop"></i>Services</a>
+    <a href="#portfolio" onclick="closeMenu()"><i class="ti ti-briefcase"></i>Portfolio</a>
+    <a href="#testimonials" onclick="closeMenu()"><i class="ti ti-star"></i>Reviews</a>
+    <a href="#blog" onclick="closeMenu()"><i class="ti ti-news"></i>Blog</a>
+    <a href="#process" onclick="closeMenu()"><i class="ti ti-list-check"></i>Process</a>
+    <a href="#pricing" onclick="closeMenu()"><i class="ti ti-tag"></i>Pricing</a>
+    <a href="#contact" onclick="closeMenu()"><i class="ti ti-map-pin"></i>Contact</a>
+    <hr class="mob-div"/>
+    <a href="https://wa.me/923053687680?text=Hi%20MHW!%20I%20want%20a%20website." target="_blank" class="mob-cta" onclick="closeMenu()">
+      <i class="ti ti-brand-whatsapp"></i>Chat on WhatsApp
+    </a>
+    <div class="mob-ci-row">
+      <div class="mob-ci"><i class="ti ti-phone"></i><span>+92 305 3687680</span></div>
+      <div class="mob-ci"><i class="ti ti-mail"></i><span>mhenterprises10609@gmail.com</span></div>
+      <div class="mob-ci"><i class="ti ti-map-pin"></i><span>Karachi, Pakistan</span></div>
+    </div>
   </div>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <span class="hero-stat-num">4</span>
-      <span class="hero-stat-label">Campuses</span>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-mesh"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-c">
+    <div class="hero-pill"><i class="ti ti-map-pin"></i>Karachi, Pakistan — Serving Worldwide</div>
+    <h1>
+      <span>We Build Websites</span>
+      <span>That Make Your Business</span>
+      <span><em>Stand Out</em></span>
+    </h1>
+    <p class="hero-desc">Professional, mobile-friendly websites for local businesses in Karachi and beyond — fast delivery, affordable prices, real results.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/923053687680?text=Hi%20MHW!%20I%20want%20a%20website%20for%20my%20business." class="btn-p" target="_blank"><i class="ti ti-brand-whatsapp"></i>Get a Free Quote</a>
+      <a href="#portfolio" class="btn-o"><i class="ti ti-eye"></i>See Our Work</a>
     </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">4K+</span>
-      <span class="hero-stat-label">A* Grades Produced</span>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">100%</div><div class="lbl">Mobile Ready</div></div>
+      <div class="stat"><div class="num">51+</div><div class="lbl">Websites Built</div></div>
+      <div class="stat"><div class="num">24/7</div><div class="lbl">Support</div></div>
+      <div class="stat"><div class="num">PKR</div><div class="lbl">Affordable</div></div>
     </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">22</span>
-      <span class="hero-stat-label">Subjects Offered</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">Web Design <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Mobile First <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Karachi Based <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Fast Delivery <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Graphic Design <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Digital Marketing <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Affordable <span class="marquee-dot">✦</span></span>
+    
+    <span class="marquee-item">WhatsApp Integration <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Google Maps <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">No Hidden Fees <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">K-Town & Worldwide <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Web Design <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Mobile First <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Karachi Based <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Fast Delivery <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Graphic Design <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Digital Marketing <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Affordable <span class="marquee-dot">✦</span></span>
+    
+    <span class="marquee-item">WhatsApp Integration <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Google Maps <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">No Hidden Fees <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">K-Town & Worldwide <span class="marquee-dot">✦</span></span>
+  </div>
+</div>
+
+<!-- STATS COUNTER -->
+<div class="stats-section">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="counter-card">
+        <span class="counter-num" data-target="51" data-suffix="+">0</span>
+        <span class="counter-lbl">Live Projects Delivered</span>
+      </div>
+      <div class="counter-card">
+        <span class="counter-num" data-target="100">0</span>
+        <span class="counter-lbl">% Mobile Friendly</span>
+      </div>
+      <div class="counter-card">
+        <span class="counter-num" data-target="7">0</span>
+        <span class="counter-lbl">Days Min. Delivery</span>
+      </div>
+      <div class="counter-card">
+        <span class="counter-num" data-target="24">0</span>
+        <span class="counter-lbl">/ 7 Support</span>
+      </div>
     </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">10</span>
-      <span class="hero-stat-label">Years of Excellence</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-eye">What We Offer</div>
+    <h2 class="sec-h">Our <em>Services</em></h2>
+    <div class="sec-rule"></div>
+    <div class="srv-banner">
+      <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80&auto=format&fit=crop" alt="Web design" loading="lazy"/>
+      <div class="srv-banner-ov"></div>
+      <div class="srv-banner-txt">
+        <h3>Professional Websites</h3>
+        <p>For every business in Karachi and beyond</p>
+      </div>
+    </div>
+    <div class="srv-grid">
+      <div class="card srv-card"><div class="srv-ic"><i class="ti ti-device-laptop"></i></div><h3>Business Website</h3><p>Multi-page site with your services, contact, and location — built to impress clients.</p><div class="srv-price"><i class="ti ti-tag"></i>From Rs. 12,000</div></div>
+      <div class="card srv-card"><div class="srv-ic"><i class="ti ti-device-mobile"></i></div><h3>Mobile-First Design</h3><p>Every website we build looks and works perfectly on all smartphones and screens.</p><div class="srv-price"><i class="ti ti-check"></i>Included in all plans</div></div>
+      <div class="card srv-card"><div class="srv-ic"><i class="ti ti-shopping-cart"></i></div><h3>Online Store</h3><p>Sell your products online with a clean, easy-to-manage e-commerce store.</p><div class="srv-price"><i class="ti ti-tag"></i>From Rs. 35,000</div></div>
+      <div class="card srv-card"><div class="srv-ic"><i class="ti ti-refresh"></i></div><h3>Website Redesign</h3><p>Old or broken website? We rebuild it modern, fast, and mobile-ready.</p><div class="srv-price"><i class="ti ti-tag"></i>From Rs. 8,000</div></div>
+      <div class="card srv-card"><div class="srv-ic"><i class="ti ti-brand-google"></i></div><h3>Google Maps Listing</h3><p>Get your business on Google Maps so customers find you instantly when searching.</p><div class="srv-price"><i class="ti ti-tag"></i>From Rs. 3,000</div></div>
+      <div class="card srv-card"><div class="srv-ic"><i class="ti ti-headset"></i></div><h3>Ongoing Support</h3><p>We stay with you long after delivery — updates, edits, and maintenance included.</p><div class="srv-price"><i class="ti ti-refresh"></i>Monthly plans available</div></div>
+      <div class="card srv-card"><div class="srv-ic"><i class="ti ti-palette"></i></div><h3>Graphic Designing</h3><p>Logos, banners, social media posts, and brand kits — designed to make your business look professional everywhere.</p><div class="srv-price"><i class="ti ti-tag"></i>From Rs. 2,500</div></div>
+      <div class="card srv-card"><div class="srv-ic"><i class="ti ti-trending-up"></i></div><h3>Digital Marketing</h3><p>Facebook & Instagram ads, boosted posts, and targeted campaigns to get your business noticed online.</p><div class="srv-price"><i class="ti ti-tag"></i>From Rs. 5,000 / month</div></div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="container">
+  <div class="wrap">
     <div class="about-grid">
-      <div class="about-visual">
-        <p class="about-quote">"More than a coaching centre. A place where<span> ambition meets guidance.</span>"</p>
-        <div class="about-visual-stats">
-          <div class="astat">
-            <span class="astat-n">4 Campuses</span>
-            <span class="astat-l">Across Karachi</span>
-          </div>
-          <div class="astat">
-            <span class="astat-n">4.8★</span>
-            <span class="astat-l">Google Rating</span>
-          </div>
-          <div class="astat">
-            <span class="astat-n">Online</span>
-            <span class="astat-l">& On-Site</span>
-          </div>
-        </div>
+      <div class="about-imgs">
+        <div class="aimg tall"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80&auto=format&fit=crop" alt="Developer" loading="lazy"/></div>
+        <div class="aimg"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80&auto=format&fit=crop" alt="Team" loading="lazy"/></div>
+        <div class="aimg"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80&auto=format&fit=crop" alt="Meeting" loading="lazy"/></div>
       </div>
-      <div class="about-text">
-        <p class="section-eyebrow">Who We Are</p>
-        <h2 class="section-title">Built for<br><span>Cambridge Students</span></h2>
-        <p>The Professionals Core is a dedicated Cambridge education network serving O Level, IGCSE, and A Level students across Karachi. We combine subject expertise with a genuine care for student wellbeing — earning our name as students' second home.</p>
-        <p>With campuses in North Nazimabad, Gulshan, Johar, and Bahadurabad, we bring expert-led coaching closer to you, whether you prefer in-person or online learning.</p>
-        <div class="pillars">
-          <div class="pillar">
-            <div class="pillar-title">Expert Faculty</div>
-            <div class="pillar-desc">Subject specialists with deep Cambridge syllabus knowledge</div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-title">Exam-Focused</div>
-            <div class="pillar-desc">Targeted preparation for peak exam performance</div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-title">Results-Driven</div>
-            <div class="pillar-desc">4,000+ A* grades and a culture of academic excellence</div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-title">Supportive</div>
-            <div class="pillar-desc">A welcoming environment where every student belongs</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SUBJECTS -->
-<section id="subjects">
-  <div class="container">
-    <p class="section-eyebrow">What We Teach</p>
-    <h2 class="section-title">Subjects<br><span>We Cover</span></h2>
-    <div class="subjects-tabs" id="subjectTabs">
-      <button class="tab-btn active" data-tab="o-level">O Level & IGCSE</button>
-      <button class="tab-btn" data-tab="a-level">A Level</button>
-    </div>
-    <div class="tab-panel active" id="o-level">
-      <div class="subjects-grid">
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Mathematics</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Additional Mathematics</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Physics</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Chemistry</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Biology</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">English</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Urdu</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Pakistan Studies</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Islamiyat</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Business Studies</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Economics</span></div>
-      </div>
-    </div>
-    <div class="tab-panel" id="a-level">
-      <div class="subjects-grid">
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Economics</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Accounting</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Computer Science</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Physics</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Sociology</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Psychology</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Further Mathematics</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Chemistry Practical</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Physics Practical</span></div>
-        <div class="subject-card"><div class="subject-dot"></div><span class="subject-name">Biology Practical</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FACULTY -->
-<section id="faculty">
-  <div class="container">
-    <p class="section-eyebrow">Our Educators</p>
-    <h2 class="section-title">Meet the Faculty</h2>
-    <p class="section-sub">Subject specialists who bring the Cambridge syllabus to life — with rigour, clarity, and genuine investment in your results.</p>
-
-    <!-- Star Faculty -->
-    <div class="star-faculty" style="margin-top:2.5rem;">
       <div>
-        <div class="star-avatar-lg">HA</div>
-      </div>
-      <div class="star-faculty-meta">
-        <h3>Sir Hamza Ali</h3>
-        <div class="role">Pakistan Studies (O Level) — Cambridge Certified Educator</div>
-        <div class="star-achievements">
-          <div class="star-ach">
-            <span class="star-ach-n">10 Yrs</span>
-            <span class="star-ach-l">Teaching Experience</span>
-          </div>
-          <div class="star-ach">
-            <span class="star-ach-n">4,000+</span>
-            <span class="star-ach-l">A* Grades</span>
-          </div>
-          <div class="star-ach">
-            <span class="star-ach-n">5,000+</span>
-            <span class="star-ach-l">A Grades</span>
-          </div>
-          <div class="star-ach">
-            <span class="star-ach-n">8K+</span>
-            <span class="star-ach-l">Instagram Followers</span>
-          </div>
+        <div class="sec-eye">About MHW</div>
+        <h2 class="sec-h">We Help Businesses <em>Go Online</em></h2>
+        <div class="sec-rule"></div>
+        <p class="about-p">MHW is a website design studio based in Karachi, Pakistan. We specialize in building clean, professional, and mobile-friendly websites for local businesses — restaurants, salons, gyms, clinics, shops and more.</p>
+        <p class="about-p">We understand the Karachi market, speak your language, and deliver results that are genuinely affordable — with no hidden fees, ever.</p>
+        <div class="atags">
+          <span class="atag">Web Design</span><span class="atag">Mobile-First</span><span class="atag">Karachi Based</span><span class="atag">Worldwide</span><span class="atag">Affordable</span><span class="atag">Fast Delivery</span><span class="atag">No Hidden Fees</span><span class="atag">Graphic Design</span><span class="atag">Digital Marketing</span>
         </div>
-      </div>
-    </div>
-
-    <div class="subjects-tabs" id="facultyTabs">
-      <button class="tab-btn active" data-tab="f-olevel">O Level Faculty</button>
-      <button class="tab-btn" data-tab="f-alevel">A Level Faculty</button>
-    </div>
-
-    <div class="tab-panel active" id="f-olevel">
-      <div class="faculty-grid">
-        <div class="faculty-card">
-          <div class="faculty-avatar">HA</div>
-          <div class="faculty-name">Hamza Ali</div>
-          <div class="faculty-subject">Pakistan Studies</div>
-          <div class="faculty-note">Cambridge Certified · 10 Years · 4,000+ A*s</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">FM</div>
-          <div class="faculty-name">Fazil Maniya</div>
-          <div class="faculty-subject">Islamiyat</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">RH</div>
-          <div class="faculty-name">Rizwan Haider</div>
-          <div class="faculty-subject">Urdu</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">ZA</div>
-          <div class="faculty-name">Zahid Anwer</div>
-          <div class="faculty-subject">English</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">SL</div>
-          <div class="faculty-name">Shahzaib Latafat</div>
-          <div class="faculty-subject">Mathematics / Add. Maths</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">KR</div>
-          <div class="faculty-name">Kashan Rashid</div>
-          <div class="faculty-subject">Physics</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">DN</div>
-          <div class="faculty-name">Dr. Noor</div>
-          <div class="faculty-subject">Biology / Chemistry</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">MK</div>
-          <div class="faculty-name">Moosa Khan</div>
-          <div class="faculty-subject">Chemistry</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">QB</div>
-          <div class="faculty-name">Qubair Bhoot</div>
-          <div class="faculty-subject">Business Studies</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">FM</div>
-          <div class="faculty-name">Fahad Munaf</div>
-          <div class="faculty-subject">Economics</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-panel" id="f-alevel">
-      <div class="faculty-grid">
-        <div class="faculty-card">
-          <div class="faculty-avatar">BB</div>
-          <div class="faculty-name">Bilal Bashir</div>
-          <div class="faculty-subject">Economics</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">UY</div>
-          <div class="faculty-name">Uzair Yaqoob</div>
-          <div class="faculty-subject">Accounts</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">NZ</div>
-          <div class="faculty-name">Noman Zafar</div>
-          <div class="faculty-subject">Accounts</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">AK</div>
-          <div class="faculty-name">M. Ali Khan</div>
-          <div class="faculty-subject">Computer Science</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">KA</div>
-          <div class="faculty-name">Kashif Anwer</div>
-          <div class="faculty-subject">Computer Science</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">MA</div>
-          <div class="faculty-name">Maaz Ahmed</div>
-          <div class="faculty-subject">Computer Science</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">MA</div>
-          <div class="faculty-name">Mahad Amer</div>
-          <div class="faculty-subject">Physics</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">AI</div>
-          <div class="faculty-name">Azeem Iqbal</div>
-          <div class="faculty-subject">Sociology / Psychology</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">FA</div>
-          <div class="faculty-name">Farough Ahmed</div>
-          <div class="faculty-subject">Further Mathematics</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">MT</div>
-          <div class="faculty-name">M. Taqi</div>
-          <div class="faculty-subject">Chemistry Practical</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">SJ</div>
-          <div class="faculty-name">Sajjad</div>
-          <div class="faculty-subject">Physics Practical</div>
-        </div>
-        <div class="faculty-card">
-          <div class="faculty-avatar">GM</div>
-          <div class="faculty-name">Ghulam Mustafa</div>
-          <div class="faculty-subject">Biology Practical</div>
+        <div class="qbox">
+          <p>"Most people search Google before visiting any shop. Without a website, you're invisible to hundreds of potential customers every single day."</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CAMPUSES -->
-<section id="campuses">
-  <div class="container">
-    <p class="section-eyebrow">Find Us</p>
-    <h2 class="section-title">Our <span>Campuses</span></h2>
-    <p class="section-sub">Four campuses across Karachi — and online classes to keep you connected wherever you are.</p>
-    <div class="campuses-grid">
-      <!-- North -->
-      <div class="campus-card">
-        <div class="campus-header">
-          <div class="campus-number">01</div>
-          <div class="campus-name">North Campus</div>
-          <div class="campus-location">North Nazimabad, Karachi</div>
+<!-- PORTFOLIO -->
+<section id="portfolio" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-eye">Our Work</div>
+    <h2 class="sec-h">Live <em>Portfolio</em></h2>
+    <div class="sec-rule"></div>
+    <div class="port-grid">
+      <div class="card port-card">
+        <div class="port-thumb">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=80&auto=format&fit=crop" alt="Prime Fitness" loading="lazy"/>
+          <span class="port-live">Live</span>
+          <div class="port-over"><div class="port-over-btn"><i class="ti ti-external-link"></i>View Live</div></div>
         </div>
-        <div class="campus-body">
-          <p style="font-size:13px;color:#666;margin-bottom:0.75rem;">Plot No. SC24, Raheem Arcade</p>
-          <a href="tel:03302467468" class="campus-contact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
-            0330-2467468
-          </a>
-          <a href="tel:03373549172" class="campus-contact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
-            0337-3549172
-          </a>
-          <div class="campus-rating">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            4.8 / 5 on Google
-          </div>
+        <div class="port-body">
+          <h3>Prime Fitness</h3>
+          <div class="port-tags"><span class="port-tag">Gym</span><span class="port-tag">Multi-Page</span><span class="port-tag">BMI Tool</span><span class="port-tag">Gallery</span></div>
+          <p>Full-featured fitness center website with membership plans, trainer profiles, BMI calculator, and enquiry form.</p>
+          <a href="https://hashirykw.github.io/Prime-Fitness/" target="_blank" class="port-link"><i class="ti ti-external-link"></i>View Live Site</a>
         </div>
       </div>
-      <!-- Gulshan -->
-      <div class="campus-card">
-        <div class="campus-header">
-          <div class="campus-number">02</div>
-          <div class="campus-name">Gulshan Campus</div>
-          <div class="campus-location">Gulshan-e-Iqbal, Karachi</div>
+      <div class="card port-card">
+        <div class="port-thumb">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80&auto=format&fit=crop" alt="Professionals Core" loading="lazy"/>
+          <span class="port-live">Live</span>
+          <div class="port-over"><div class="port-over-btn"><i class="ti ti-external-link"></i>View Live</div></div>
         </div>
-        <div class="campus-body">
-          <a href="tel:03351356069" class="campus-contact" style="margin-top:0.5rem;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
-            0335-1356069
-          </a>
-          <a href="tel:03373549171" class="campus-contact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
-            0337-3549171
-          </a>
-          <div class="campus-rating">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            4.6 / 5 on Google
-          </div>
+        <div class="port-body">
+          <h3>Professionals Core</h3>
+          <div class="port-tags"><span class="port-tag">Business</span><span class="port-tag">Professional</span><span class="port-tag">Multi-Page</span></div>
+          <p>Clean, modern professional business website with services showcase, team section, and contact integration.</p>
+          <a href="https://hashirykw.github.io/Professionals-Core-Website/" target="_blank" class="port-link"><i class="ti ti-external-link"></i>View Live Site</a>
         </div>
       </div>
-      <!-- Johar -->
-      <div class="campus-card">
-        <div class="campus-header">
-          <div class="campus-number">03</div>
-          <div class="campus-name">Johar Campus</div>
-          <div class="campus-location">Gulshan-e-Johar, Karachi</div>
+      <div class="card port-card">
+        <div class="port-thumb">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=700&q=80&auto=format&fit=crop" alt="Power Fitness Zone" loading="lazy"/>
+          <span class="port-live">Live</span>
+          <div class="port-over"><div class="port-over-btn"><i class="ti ti-external-link"></i>View Live</div></div>
         </div>
-        <div class="campus-body">
-          <a href="tel:03373549170" class="campus-contact" style="margin-top:0.5rem;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
-            0337-3549170
-          </a>
-        </div>
-      </div>
-      <!-- Bahadurabad -->
-      <div class="campus-card">
-        <div class="campus-header">
-          <div class="campus-number">04</div>
-          <div class="campus-name">Bahadurabad Campus</div>
-          <div class="campus-location">Bahadurabad, Karachi</div>
-        </div>
-        <div class="campus-body">
-          <a href="tel:03362774360" class="campus-contact" style="margin-top:0.5rem;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
-            0336-2774360
-          </a>
+        <div class="port-body">
+          <h3>Power Fitness Zone</h3>
+          <div class="port-tags"><span class="port-tag">Gym</span><span class="port-tag">10 Plans</span><span class="port-tag">Schedule</span><span class="port-tag">Ladies</span></div>
+          <p>Full gym website for North Nazimabad's Power Fitness Zone with all membership plans, timetable, and ladies section.</p>
+          <a href="https://hashirykw.github.io/Power-Fitness-Zone-Gym/" target="_blank" class="port-link"><i class="ti ti-external-link"></i>View Live Site</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ADMISSIONS -->
-<section id="admissions">
-  <div class="container">
-    <p class="section-eyebrow">Join Us</p>
-    <h2 class="section-title">Admissions Open<br><span>Session 2026–27</span></h2>
-    <div class="admissions-content">
-      <div class="admissions-info">
-        <div class="sessions-open">Admissions Currently Open</div>
-        <h3>O Level, IGCSE & A Level</h3>
-        <p>We are currently enrolling students for our 2026–27 session. Seats are limited at each campus — reach out today to secure your place with one of Karachi's most trusted Cambridge coaching networks.</p>
-        <h3>Online Classes Available</h3>
-        <p>Can't make it in person? Our online classes bring the same quality instruction to your screen. Both on-site and virtual options are available for most subjects.</p>
-        <h3>Contact Any Campus</h3>
-        <p>Walk into any of our four campuses or call the number for your nearest branch to speak directly with our admissions team.</p>
+<!-- ALSO DO -->
+<section id="also" style="background:var(--bg3);padding:3.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-eye">Also Available</div>
+    <h2 class="sec-h" style="margin-bottom:.5rem;">More Ways We Can <em>Help</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-sub" style="margin-bottom:2rem;">Websites are our main thing — but we also offer these to help your business look great everywhere online.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;">
+      <div class="card" style="padding:1.7rem;display:flex;gap:1.25rem;align-items:flex-start;">
+        <div class="srv-ic" style="flex-shrink:0;"><i class="ti ti-palette"></i></div>
+        <div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:.4rem;">Graphic Designing</h3>
+          <p style="font-size:.83rem;color:var(--text2);line-height:1.65;">Logos, visiting cards, social media banners, brochures, and complete brand kits. We make sure your brand looks sharp whether someone sees it online or on paper.</p>
+          <div class="srv-price" style="margin-top:.7rem;"><i class="ti ti-tag"></i>From Rs. 2,500</div>
+        </div>
       </div>
-      <div class="contact-form-wrap">
-        <div class="form-title">Request Information</div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="Full name">
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="03XX-XXXXXXX">
+      <div class="card" style="padding:1.7rem;display:flex;gap:1.25rem;align-items:flex-start;">
+        <div class="srv-ic" style="flex-shrink:0;"><i class="ti ti-trending-up"></i></div>
+        <div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:.4rem;">Digital Marketing</h3>
+          <p style="font-size:.83rem;color:var(--text2);line-height:1.65;">Facebook & Instagram ad campaigns, boosted posts, and Google Business optimization — so your business gets noticed and reached by the right people.</p>
+          <div class="srv-price" style="margin-top:.7rem;"><i class="ti ti-tag"></i>From Rs. 5,000 / month</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="https://wa.me/923053687680?text=Hi%20MHW!%20I%20want%20to%20know%20more%20about%20graphic%20designing%20and%20digital%20marketing." target="_blank" class="btn-o" style="display:inline-flex;"><i class="ti ti-brand-whatsapp"></i>Ask About These Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-eye">Client Reviews</div>
+    <h2 class="sec-h">What Clients <em>Say</em></h2>
+    <div class="sec-rule"></div>
+    <div class="testi-grid">
+      <div class="card testi-card">
+        <div class="testi-text">"MHW built our gym website in just one week. It looks amazing on mobile and we've already received enquiries from new clients who found us on Google. Very professional and affordable!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar">PF</div>
+          <div>
+            <div class="testi-name">Power Fitness Zone</div>
+            <div class="testi-role">Gym · North Nazimabad, Karachi</div>
+            <div class="testi-stars">★★★★★</div>
           </div>
         </div>
-        <div class="form-group">
-          <label>Level</label>
-          <select>
-            <option value="">Select level...</option>
-            <option>O Level / IGCSE</option>
-            <option>A Level</option>
+      </div>
+      <div class="card testi-card">
+        <div class="testi-text">"Excellent work! The website they built for us is clean, fast, and works perfectly on every phone. The WhatsApp button alone has brought us so many new customers. Highly recommended!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar">PC</div>
+          <div>
+            <div class="testi-name">Professionals Core</div>
+            <div class="testi-role">Business Services · Karachi</div>
+            <div class="testi-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="card testi-card">
+        <div class="testi-text">"I had no idea how much business I was losing without a website. MHW made the whole process easy — they handled everything and delivered exactly what I wanted. Worth every rupee!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar">PF</div>
+          <div>
+            <div class="testi-name">Prime Fitness</div>
+            <div class="testi-role">Fitness Center · Karachi</div>
+            <div class="testi-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-eye">How It Works</div>
+    <h2 class="sec-h">Our Simple <em>Process</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-sub">From your first WhatsApp message to a live website — here's exactly how we work.</p>
+    <div class="proc-grid">
+      <div class="card proc-card"><div class="proc-num">01</div><h3>You Contact Us</h3><p>Send us a WhatsApp message and tell us about your business and goals.</p></div>
+      <div class="card proc-card"><div class="proc-num">02</div><h3>We Plan Together</h3><p>We suggest the right pages, design style, and features for your business.</p></div>
+      <div class="card proc-card"><div class="proc-num">03</div><h3>We Build It</h3><p>Our team designs and develops your website — fast, clean, mobile-friendly.</p></div>
+      <div class="card proc-card"><div class="proc-num">04</div><h3>You Go Live</h3><p>We launch your website and you start getting found by new customers online.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="wrap">
+    <div class="sec-eye">Tips & Insights</div>
+    <h2 class="sec-h">Our <em>Blog</em></h2>
+    <div class="sec-rule"></div>
+    <div class="blog-grid">
+      <div class="card blog-card">
+        <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80&auto=format&fit=crop" alt="Blog" loading="lazy"/></div>
+        <div class="blog-body">
+          <div class="blog-cat">Web Design</div>
+          <h3>Why Your Karachi Business Needs a Website in 2026</h3>
+          <p>Over 90% of customers search online before visiting a local business. Without a website, you are invisible to all of them. Here's what you're missing...</p>
+          <div class="blog-meta">
+            <span>June 2026</span>
+            <a href="https://wa.me/923053687680?text=Hi!%20I%20read%20your%20blog%20and%20want%20to%20know%20more." target="_blank" class="blog-read">Read More <i class="ti ti-arrow-right" style="font-size:.8rem;"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="card blog-card">
+        <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?w=600&q=80&auto=format&fit=crop" alt="Mobile" loading="lazy"/></div>
+        <div class="blog-body">
+          <div class="blog-cat">Mobile Design</div>
+          <h3>Why Mobile-First Design is Essential for Pakistani Businesses</h3>
+          <p>85% of internet users in Pakistan browse on mobile phones. If your website doesn't work on mobile, you're losing most of your potential customers...</p>
+          <div class="blog-meta">
+            <span>May 2025</span>
+            <a href="https://wa.me/923053687680?text=Hi!%20I%20read%20your%20blog%20and%20want%20to%20know%20more." target="_blank" class="blog-read">Read More <i class="ti ti-arrow-right" style="font-size:.8rem;"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="card blog-card">
+        <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80&auto=format&fit=crop" alt="WhatsApp" loading="lazy"/></div>
+        <div class="blog-body">
+          <div class="blog-cat">Marketing</div>
+          <h3>How a WhatsApp Button on Your Website Doubles Enquiries</h3>
+          <p>Adding a WhatsApp chat button to your website is one of the easiest ways to instantly increase customer enquiries. Here's why it works so well in Pakistan...</p>
+          <div class="blog-meta">
+            <span>April 2025</span>
+            <a href="https://wa.me/923053687680?text=Hi!%20I%20read%20your%20blog%20and%20want%20to%20know%20more." target="_blank" class="blog-read">Read More <i class="ti ti-arrow-right" style="font-size:.8rem;"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-eye">Pricing</div>
+    <h2 class="sec-h">Simple & <em>Affordable</em></h2>
+    <div class="sec-rule"></div>
+    <p class="sec-sub" style="margin-bottom:2.5rem;">One-time payment. No hidden charges. No monthly fees. Ever.</p>
+    <div class="price-grid">
+      <div class="card price-card">
+        <div class="p-name">Basic</div>
+        <div class="p-price">Rs. 15,000 <span>one time</span></div>
+        <div class="p-desc">Perfect for small shops and solo businesses just getting started online.</div>
+        <ul class="p-feats">
+          <li><i class="ti ti-check"></i>3 Pages</li>
+          <li><i class="ti ti-check"></i>Mobile Friendly</li>
+          <li><i class="ti ti-check"></i>WhatsApp Button</li>
+          <li><i class="ti ti-check"></i>Google Maps</li>
+          <li><i class="ti ti-check"></i>7 Days Delivery</li>
+        </ul>
+        <a href="https://wa.me/923053687680?text=Hi!%20Basic%20plan%20inquiry." target="_blank" class="p-btn p-btn-out"><i class="ti ti-brand-whatsapp"></i>WhatsApp Us</a>
+      </div>
+      <div class="card price-card hot">
+        <div class="p-badge">Most Popular</div>
+        <div class="p-name">Standard</div>
+        <div class="p-price">Rs. 30,000 <span>one time</span></div>
+        <div class="p-desc">Best for restaurants, salons, gyms, and growing businesses.</div>
+        <ul class="p-feats">
+          <li><i class="ti ti-check"></i>5–7 Pages</li>
+          <li><i class="ti ti-check"></i>Mobile Friendly</li>
+          <li><i class="ti ti-check"></i>Photo Gallery</li>
+          <li><i class="ti ti-check"></i>Inquiry Form</li>
+          <li><i class="ti ti-check"></i>WhatsApp Button</li>
+          <li><i class="ti ti-check"></i>Google Maps</li>
+          <li><i class="ti ti-check"></i>10 Days Delivery</li>
+        </ul>
+        <a href="https://wa.me/923053687680?text=Hi!%20Standard%20plan%20inquiry." target="_blank" class="p-btn p-btn-fill"><i class="ti ti-brand-whatsapp"></i>WhatsApp Us</a>
+      </div>
+      <div class="card price-card">
+        <div class="p-name">Premium</div>
+        <div class="p-price">Rs. 60,000+ <span>one time</span></div>
+        <div class="p-desc">For established businesses wanting a full-featured online presence.</div>
+        <ul class="p-feats">
+          <li><i class="ti ti-check"></i>8+ Pages</li>
+          <li><i class="ti ti-check"></i>Booking / Online Store</li>
+          <li><i class="ti ti-check"></i>Custom Animations</li>
+          
+          <li><i class="ti ti-check"></i>Social Media Links</li>
+          <li><i class="ti ti-check"></i>Priority Support</li>
+          <li><i class="ti ti-check"></i>15 Days Delivery</li>
+        </ul>
+        <a href="https://wa.me/923053687680?text=Hi!%20Premium%20plan%20inquiry." target="_blank" class="p-btn p-btn-out"><i class="ti ti-brand-whatsapp"></i>WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-eye">Get In Touch</div>
+    <h2 class="sec-h">Let's Build Your <em>Website</em></h2>
+    <div class="sec-rule"></div>
+    <div class="contact-grid">
+      <div class="c-info">
+        <div class="c-photo"><img src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=700&q=80&auto=format&fit=crop" alt="Karachi" loading="lazy"/></div>
+        <a href="https://wa.me/923053687680" target="_blank" class="c-item"><i class="ti ti-brand-whatsapp"></i><div><div class="c-lbl">WhatsApp</div><div class="c-val">+92 305 3687680</div></div></a>
+        <a href="mailto:mhenterprises10609@gmail.com" class="c-item"><i class="ti ti-mail"></i><div><div class="c-lbl">Email</div><div class="c-val">mhenterprises10609@gmail.com</div></div></a>
+        <div class="c-item"><i class="ti ti-map-pin"></i><div><div class="c-lbl">Location</div><div class="c-val">Karachi, Pakistan</div></div></div>
+        <div class="c-item"><i class="ti ti-clock"></i><div><div class="c-lbl">Working Hours</div><div class="c-val">Mon – Sat, 10am – 8pm</div></div></div>
+        <a href="https://wa.me/923053687680?text=Hi%20MHW!%20I%20want%20a%20website%20for%20my%20business." target="_blank" class="wa-big"><i class="ti ti-brand-whatsapp"></i>Chat on WhatsApp Now</a>
+      </div>
+      <div class="c-form">
+        <h3>Send a Message</h3>
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="e.g. Ali Khan" id="fn"/></div>
+        <div class="fg"><label>Business Name</label><input type="text" placeholder="e.g. Ali's Restaurant" id="fb"/></div>
+        <div class="fg"><label>Service Needed</label>
+          <select id="fs">
+            <option>Basic Website (3 pages) — Rs. 15,000</option>
+            <option>Standard Website (5-7 pages) — Rs. 30,000</option>
+            <option>Premium Website — Rs. 60,000+</option>
+            <option>Website Redesign — From Rs. 8,000</option>
+            <option>Online Store</option>
+            <option>Google Maps Listing</option>
+            <option>Graphic Designing (Logo / Brand Kit / Banners)</option>
+            <option>Digital Marketing (Social Media Ads)</option>
+            <option>Not sure yet</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Preferred Campus</label>
-          <select>
-            <option value="">Select campus...</option>
-            <option>North Nazimabad Campus</option>
-            <option>Gulshan Campus</option>
-            <option>Johar Campus</option>
-            <option>Bahadurabad Campus</option>
-            <option>Online</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Subject of Interest</label>
-          <input type="text" placeholder="e.g. Mathematics, Physics...">
-        </div>
-        <button class="form-submit" onclick="alert('Thank you! Our team will contact you shortly.')">Submit Enquiry →</button>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell us about your business and goals..." id="fm"></textarea></div>
+        <button class="f-sub" onclick="sendWA()"><i class="ti ti-brand-whatsapp"></i>Send via WhatsApp</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONNECT -->
-<section id="connect">
-  <div class="container">
-    <p class="section-eyebrow">Stay Connected</p>
-    <h2 class="section-title">Follow & <span>Reach Out</span></h2>
-    <p class="section-sub">Stay updated with our latest results, announcements, and resources across our social channels.</p>
-    <div class="social-bar">
-      <a href="https://www.instagram.com/the_professionals_institute" target="_blank" class="social-card">
-        <div class="social-icon insta">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </div>
-        <div class="social-info">
-          <div class="social-name">Instagram</div>
-          <div class="social-handle">@the_professionals_institute · 1,319+ followers</div>
-        </div>
-      </a>
-      <a href="#" class="social-card">
-        <div class="social-icon fb">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        </div>
-        <div class="social-info">
-          <div class="social-name">Facebook</div>
-          <div class="social-handle">The Professionals Core · 2.6K+ followers</div>
-        </div>
-      </a>
-      <a href="#campuses" class="social-card">
-        <div class="social-icon google">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        </div>
-        <div class="social-info">
-          <div class="social-name">Google</div>
-          <div class="social-handle">North 4.8★ · Gulshan 4.6★</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+<!-- THEME BAR -->
+<div class="tbar">
+  <span class="tbar-lbl">Theme:</span>
+  <button class="tbtn on" onclick="setTheme('',this)"><span class="tdot" style="background:#d4c5a9;"></span>Midnight</button>
+  <button class="tbtn" onclick="setTheme('theme-ocean',this)"><span class="tdot" style="background:#4da8e8;"></span>Ocean</button>
+  <button class="tbtn" onclick="setTheme('theme-forest',this)"><span class="tdot" style="background:#44cc55;"></span>Forest</button>
+  <button class="tbtn" onclick="setTheme('theme-violet',this)"><span class="tdot" style="background:#9966ff;"></span>Violet</button>
+  <button class="tbtn" onclick="setTheme('theme-rose',this)"><span class="tdot" style="background:#ee4477;"></span>Rose</button>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-name">The Professionals Core</div>
-        <p class="footer-brand-desc">"Your Second Home" — A Cambridge coaching network dedicated to O Level, IGCSE, and A Level students across Karachi.</p>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo-row">
+        <div class="foot-logo-img"><img id="footLogo" src="" alt="MHW"/></div>
+        <div class="foot-brand-name">MHW</div>
       </div>
-      <div>
-        <div class="footer-col-title">Quick Links</div>
-        <ul class="footer-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#subjects">Subjects</a></li>
-          <li><a href="#faculty">Faculty</a></li>
-          <li><a href="#campuses">Campuses</a></li>
-          <li><a href="#admissions">Admissions</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Campuses</div>
-        <ul class="footer-links">
-          <li><a href="tel:03302467468">North Nazimabad</a></li>
-          <li><a href="tel:03351356069">Gulshan</a></li>
-          <li><a href="tel:03373549170">Johar</a></li>
-          <li><a href="tel:03362774360">Bahadurabad</a></li>
-        </ul>
+      <p class="foot-p">Website Design Studio based in Karachi, Pakistan. Building professional, mobile-friendly websites for local businesses and clients worldwide.</p>
+      <div class="foot-social">
+        <a href="https://wa.me/923053687680" target="_blank" class="fsoc" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+        <a href="mailto:mhenterprises10609@gmail.com" class="fsoc" aria-label="Email"><i class="ti ti-mail"></i></a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>© 2026 <span>The Professionals Core</span> · All rights reserved</div>
-      <div>O Levels · A Levels · IGCSE · Karachi</div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://wa.me/923053687680" target="_blank"><i class="ti ti-brand-whatsapp"></i>+92 305 3687680</a></li>
+        <li><a href="mailto:mhenterprises10609@gmail.com"><i class="ti ti-mail"></i>mhenterprises10609@gmail.com</a></li>
+        <li><a href="#"><i class="ti ti-map-pin"></i>Karachi, Pakistan</a></li>
+        <li><a href="#"><i class="ti ti-clock"></i>Mon–Sat, 10am–8pm</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2025 MHW Website Design Studio · Karachi, Pakistan</p>
+    <p>Built with ❤️ for <a href="#home">K-Town</a> & the whole world</p>
   </div>
 </footer>
 
+<!-- FLOATING WA -->
+<a href="https://wa.me/923053687680?text=Hi%20MHW!%20I%20want%20a%20website%20for%20my%20business." target="_blank" class="wa-float" aria-label="WhatsApp">
+  <i class="ti ti-brand-whatsapp"></i>
+</a>
+
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+// Logo base64
+var LOGO = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjQwIiB2aWV3Qm94PSIwIDAgMjAwIDI0MCI+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTA1IiByPSI5OCIgZmlsbD0iIzBhMGEwYSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwNSIgcj0iODgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YzVhOSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8ZWxsaXBzZSBjeD0iMTAwIiBjeT0iMTA1IiByeD0iNDQiIHJ5PSI4OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuMiIvPgogIDxlbGxpcHNlIGN4PSIxMDAiIGN5PSIxMDUiIHJ4PSI4OCIgcnk9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9IiNkNGM1YTkiIHN0cm9rZS13aWR0aD0iMS4yIi8+CiAgPGVsbGlwc2UgY3g9IjEwMCIgY3k9IjEwNSIgcng9Ijg4IiByeT0iNjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YzVhOSIgc3Ryb2tlLXdpZHRoPSIwLjgiIHN0cm9rZS1kYXNoYXJyYXk9IjMsMyIvPgogIDxsaW5lIHgxPSIxMiIgeTE9IjEwNSIgeDI9IjE4OCIgeTI9IjEwNSIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuMiIvPgogIDxsaW5lIHgxPSIxMDAiIHkxPSIxNyIgeDI9IjEwMCIgeTI9IjE5MyIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjEuMiIvPgogIDxyZWN0IHg9IjIyIiB5PSI3OCIgd2lkdGg9IjE1NiIgaGVpZ2h0PSI1NCIgcng9IjYiIGZpbGw9IiMwYTBhMGEiLz4KICA8dGV4dCB4PSIxMDAiIHk9IjExNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTAiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNkNGM1YTkiIGxldHRlci1zcGFjaW5nPSItMSI+TUhXPC90ZXh0PgogIDxsaW5lIHgxPSIyOCIgeTE9IjIxMiIgeDI9IjE3MiIgeTI9IjIxMiIgc3Ryb2tlPSIjZDRjNWE5IiBzdHJva2Utd2lkdGg9IjAuNiIgb3BhY2l0eT0iLjQiLz4KICA8dGV4dCB4PSIxMDAiIHk9IjIyNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNkNGM1YTkiIGxldHRlci1zcGFjaW5nPSIzLjUiPldFQlNJVEUgREVTSUdOIFNUVURJTzwvdGV4dD4KPC9zdmc+';
 
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+// Set logo everywhere on load
+document.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('navLogo').src = LOGO;
+  document.getElementById('footLogo').src = LOGO;
+  document.getElementById('favicon').href = LOGO;
+});
 
-  function initTabs(tabsId) {
-    const tabs = document.getElementById(tabsId);
-    if (!tabs) return;
-    tabs.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabs.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const panel = document.getElementById(btn.dataset.tab);
-        document.querySelectorAll('.tab-panel').forEach(p => {
-          if (p.closest('section') === btn.closest('section')) p.classList.remove('active');
-        });
-        if (panel) panel.classList.add('active');
-      });
-    });
-  }
+// Scroll top
+window.addEventListener('scroll',function(){
+  var btn=document.getElementById('scrollTop');
+  if(window.scrollY>400)btn.classList.add('visible');
+  else btn.classList.remove('visible');
+});
 
-  initTabs('subjectTabs');
-  initTabs('facultyTabs');
+// Counter animation
+function animateCounters(){
+  document.querySelectorAll('.counter-num[data-target]').forEach(function(el){
+    var target=parseInt(el.getAttribute('data-target'));
+    var suffix=el.getAttribute('data-suffix')||'';
+    var current=0;
+    var step=Math.max(1,Math.floor(target/40));
+    var timer=setInterval(function(){
+      current+=step;
+      if(current>=target){current=target;clearInterval(timer);}
+      el.textContent=current+suffix;
+    },40);
+  });
+}
+var counted=false;
+function checkCounter(){
+  if(counted)return;
+  var el=document.querySelector('.stats-section');
+  if(!el)return;
+  var rect=el.getBoundingClientRect();
+  if(rect.top<window.innerHeight){counted=true;animateCounters();}
+}
+window.addEventListener('scroll',checkCounter);
+// Also check on load in case stats are visible
+window.addEventListener('load',function(){setTimeout(checkCounter,500);});
+
+// Menu
+function toggleMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hmbg'),o=m.classList.toggle('open');h.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}
+function closeMenu(){document.getElementById('mobMenu').classList.remove('open');document.getElementById('hmbg').classList.remove('open');document.body.style.overflow='';}
+function goTo(id){closeMenu();var e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth'});}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();closeMenu();setTimeout(function(){t.scrollIntoView({behavior:'smooth'});},80);}});});
+
+// Themes — logo tints per theme
+var themes=['theme-ocean','theme-forest','theme-violet','theme-rose'];
+function setTheme(t,btn){
+  themes.forEach(function(th){document.body.classList.remove(th);});
+  if(t)document.body.classList.add(t);
+  document.querySelectorAll('.tbtn').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+}
+
+// WhatsApp form
+function sendWA(){
+  var n=document.getElementById('fn').value||'Not given';
+  var b=document.getElementById('fb').value||'Not given';
+  var s=document.getElementById('fs').value;
+  var m=document.getElementById('fm').value||'No message';
+  window.open('https://wa.me/923053687680?text='+encodeURIComponent('Hi MHW!\n\nName: '+n+'\nBusiness: '+b+'\nService: '+s+'\nMessage: '+m),'_blank');
+}
 </script>
 </body>
 </html>
